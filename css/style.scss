@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import "_mixin";
+
+body{font-family: "Noto Sans KR"; font-size: 16px; font-weight: 400;}
+
+/* tag reset */
+body, p{padding: 0; margin: 0;}
+
+/* common class */
+.p_r{position: relative;}
+.d_n{display: none !important;}
+
+/* #intro */
+#intro{
+  @include flex;
+  @include justify-content;
+  @include align-items;
+  @include flex-direction;
+  position: absolute; top: 0; left: 0; height: 100vh; width: 100%; background: #F6ECE3;
+  .txt{
+    display: inline-block; line-height: 2; font-size: 30px;
+    // span{color: #e25e29; font-size: 40px; font-weight: 700;}
+  }
+  .up{
+    animation: appear 1.5s forwards;
+  }
+}
+
+@keyframes appear {
+  0%{opacity: 0; transform: translateX(-50px);}
+  100%{opacity: 1; transform: translateX(0px);}
+}
+
+#cnt1{
+  @include flex;
+  @include justify-content;
+  @include align-items;
+  height: 100vh; padding-top: 10px;
+  .back_bg{
+    position: absolute; top: 50%; left: 50%; z-index: -1; width: 1000px; height: 700px; background: gray;
+    text{
+      fill: red; font-size: 20px; font-weight: 700;
+  }
+}
+
+#cnt2{
+  height: 100vh;
+}
