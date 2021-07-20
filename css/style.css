@@ -2,8 +2,8 @@ body {
   font-family: "Noto Sans KR";
   font-size: 16px;
   font-weight: 400;
-  color: #222;
-  background: #eee; }
+  color: #eee;
+  background: #222; }
 
 /* tag reset */
 body, p {
@@ -13,6 +13,14 @@ body, p {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }
 
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer; }
+
 /* common class */
 .p_r {
   position: relative; }
@@ -20,16 +28,47 @@ h1, h2, h3, h4, h5, h6 {
 .d_n {
   display: none !important; }
 
+/* face */
+#face {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  margin-left: -32.5px;
+  width: 65px;
+  height: 50px;
+  cursor: pointer; }
+  #face .eyeball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #222;
+    background: #eee;
+    position: absolute;
+    top: 0; }
+    #face .eyeball.left {
+      left: 0; }
+    #face .eyeball.right {
+      right: 0; }
+  #face .pupil {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border-radius: 50%;
+    background: #222;
+    top: 0;
+    left: 0; }
+
 /* cursor */
 .cursor {
   position: absolute;
   z-index: 10000;
   border-radius: 50%;
-  opacity: 0.8; }
+  opacity: 0.8;
+  pointer-events: none; }
 
 .first_cursor {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   top: 0;
   left: 0;
@@ -88,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
       opacity: 0; }
     #intro .txt .stress {
       color: #ff3a17;
-      font-size: 50px;
+      font-size: 40px;
       font-weight: 700; }
   #intro p {
     font-size: 25px; }
@@ -116,20 +155,20 @@ h1, h2, h3, h4, h5, h6 {
   overflow-x: hidden; }
   #cnt1 .txt_bg {
     font-weight: 900;
-    font-size: 250px;
-    color: #222;
-    -webkit-text-stroke: 3px #222;
+    font-size: 300px;
+    color: #eee;
+    -webkit-text-stroke: 4px #eee;
     -webkit-text-fill-color: transparent;
     opacity: 0.07; }
     #cnt1 .txt_bg :first-child {
       position: absolute;
-      top: 0;
+      top: 8%;
       left: 0;
       animation: leftMove 9s linear infinite;
       margin-left: 100%; }
     #cnt1 .txt_bg :last-child {
       position: absolute;
-      bottom: 0;
+      bottom: 8%;
       right: 0;
       animation: rightMove 9s linear infinite;
       margin-right: 100%; }
