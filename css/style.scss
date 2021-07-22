@@ -54,9 +54,10 @@ a:link, a:visited, a:hover, a:active{text-decoration: none; color: inherit;}
 .hidden{visibility: hidden;}
 .blind{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
 
-body{font-family: NotoSansKR; font-size: 16px; font-weight: 400; color: #eee; background: #333; overflow-x: hidden;}
+body{font-family: NotoSansKR; font-size: 16px; font-weight: 400; color: #eee; background: #333; /* overflow-x: hidden; */}
 *{box-sizing: border-box;}
 body.overflowy{overflow-y: hidden;}
+body.overflowX{overflow-X: hidden;}
 
 /* ipod */
 #ipod{
@@ -237,20 +238,27 @@ body.overflowy{overflow-y: hidden;}
   .intro_sulwhasoo{
     @include flex;
     @include justify-content(space-around);
-    @include align-items;    
-    height: 100vh;
+    @include align-items;
+    @include transition(all 0.8s);
+    height: 100vh; position: relative;
     .txt_sulwhasoo{
-      strong{color: #fcb95e;}
-      h2{
-       font-size: 55px; background: linear-gradient(225deg, #fcf8f1 10%, #fcb95e 50%, #f57e3c 100%); color: transparent; -webkit-background-clip: text; background-clip: text; line-height: 1; font-weight: 900;
+      strong{
+        color: #fcb95e;
       }
-      p{padding-top: 10px; color: #fff;}
+      h2{
+       font-size: 70px; background: linear-gradient(225deg, #fcf8f1 10%, #fcb95e 50%, #f57e3c 100%); color: transparent; -webkit-background-clip: text; background-clip: text; line-height: 1; font-weight: 900;
+      }
+      p{padding-top: 20px; color: #fff; line-height: 1.7; font-size: 18px;}
     }
     .computer{
       @include transform(scale(0.65));
       position: relative; width: 1000px; height: 826px;
       .sulwhasoo_cnt{position: absolute; top: 37px; left: 41px;}
     }
+    &.on{
+        margin-left: -100%; opacity: 0;
+    }
+
   }
   .monitor{
     position: absolute; top: 37px; left: 41px; width: 1000px; height: 579px;z-index: 10;
@@ -260,18 +268,53 @@ body.overflowy{overflow-y: hidden;}
 }
 .brand_txt{
   @include flex;
-  @include justify-content(space-evenly);
-  height: 100vh;
-  h3{font-size: 55px; background: linear-gradient(355deg, #fcf8f1 10%, #fcb95e 50%, #f57e3c 100%); color: transparent; -webkit-background-clip: text; background-clip: text; line-height: 1; font-weight: 900;}
-  p{line-height: 1.5; color: #222; width: 50%;}
+  @include align-items(flex-start);
+  @include justify-content;
+  height: 100vh; color: #222; width: 100%; padding-top: 50px;
+  h3, p{padding: 20px 35px;}
+  h3{
+    @include transition(all 0.3s);
+    font-size: 55px; line-height: 1; font-weight: 900;color: #fcf8f1; text-shadow: 3px 3px 0px #390510, 6px 6px 0px #f57e3c, 9px 9px 0px #c11a2b;
+    &:hover{
+      text-shadow: 5px 5px 0px #390510, 7px 7px 0px #f57e3c, 12px 12px 0px #c11a2b; margin-top: 5px;
+    }
+  }
+  p{
+    line-height: 2;  width: 50%; background: linear-gradient(170deg, #fcf8f1 30%, #fcb95e 80%, #f57e3c 100%); border-radius: 0 30px 0 30px; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);}
+  &.on{
+    margin-top: 0; opacity: 1;
+  }
 }
 .newsletter{
   @include flex;
-  @include justify-content(space-evenly);
-  h3{font-size: 55px; background: linear-gradient(225deg, #f57e3c 5%, #fcb95e 50%,#fcf8f1  100%); color: transparent; -webkit-background-clip: text; background-clip: text;line-height: 1; font-weight: 900;}
+  @include flex-direction;
+  @include align-items;
+  color: #222; position: relative;
+  .news_txt{
+    @include flex;
+    @include align-items;
+    @include justify-content;
+    width: 100%; padding-bottom: 40px;
+    h3, p{padding: 20px 35px;}
+    h3{
+      @include transition(all 0.3s);
+      font-size: 55px; line-height: 1; font-weight: 900; color: #ffdeaf; text-shadow: 4px 4px 0px #390510, 7px 7px 0px #f57e3c, 10px 10px 0px #fcf8f1, 12px 12px 0px #ffaa9b;
+    &:hover{
+      text-shadow: 6px 6px 0px #390510, 9px 9px 0px #f57e3c, 12px 12px 0px #fcf8f1, 15px 15px 0px #ffaa9b; margin-top: 5px;
+    }
+    }
+    p{line-height: 2; background: linear-gradient(220deg, #f57e3c 5%, #fcb95e 30%, #fcf8f1 100%); border-radius: 30px 0 30px 0;}
+  }
+  .brand_hover_txt{
+    position: absolute; bottom: 400px; right: 80px;padding: 10px;
+    svg{position: absolute; top: -10px; left: -150px;
+      circle{fill: #cbd5b2}
+      path{fill: none; stroke: #cbd5b2; stroke-linecap: round; stroke-width: 4px}
+    }
+    strong{font-size: 24px; text-align: right; display: block; padding-bottom: 10px;}
+    p{text-align: right; line-height: 1.5;}
+  }
 }
-
-
 
 
 #cnt3{
