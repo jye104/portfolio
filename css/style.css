@@ -18,7 +18,7 @@
   src: url("../fonts/NotoSansKR-Black.eot");
   src: local("Noto Sans KR"), url("../fonts/NotoSansKR-Black.eot") format("embedded-opentype"), url("../fonts/NotoSansKR-Black.woff2") format("woff2"), url("../fonts/NotoSansKR-Black.woff") format("woff"), url("../fonts/NotoSansKR-Black.otf") format("opentype"), url("../fonts/NotoSansKR-Black.svg#NotoSansKR") format("svg"); }
 /* tag reset */
-body, h1, h2, h3, ul, p {
+body, h1, h2, h3, ul, p, button {
   padding: 0;
   margin: 0; }
 
@@ -83,70 +83,69 @@ body.overflowy {
   overflow-y: hidden; }
 
 /* ipod */
-.ipod {
+#ipod {
   position: fixed;
   top: 30px;
-  left: 50%;
-  z-index: 1000;
-  margin-left: -238.5px; }
-  .ipod .btn_ipod .click {
-    -webkit-transition: transform 0.3s;
-    -moz-transition: transform 0.3s;
-    -o-transition: transform 0.3s;
-    transition: transform 0.3s;
-    position: absolute;
-    top: 20%;
-    left: -5%;
-    color: #333;
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    border-radius: 50%;
-    background: #fff;
-    z-index: 2;
-    box-shadow: 1px 1px 5px #333;
-    font-size: 20px;
-    font-weight: 700; }
-    .ipod .btn_ipod .click::before, .ipod .btn_ipod .click::after {
+  left: 98%;
+  z-index: 10000; }
+  #ipod .btn_ipod {
+    position: relative; }
+    #ipod .btn_ipod .click {
       -webkit-transition: transform 0.3s;
       -moz-transition: transform 0.3s;
       -o-transition: transform 0.3s;
       transition: transform 0.3s;
-      content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 70px;
-      height: 70px;
-      background: rgba(255, 255, 255, 0.5);
+      top: 20%;
+      left: -7%;
+      color: #333;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
       border-radius: 50%;
-      z-index: -1;
-      animation: circle 5s infinite forwards;
-      transition: transform 0.3s; }
-    .ipod .btn_ipod .click::after {
-      animation-delay: 0.5s; }
-    .ipod .btn_ipod .click:hover, .ipod .btn_ipod .click:focus {
-      -webkit-transform: scale(1.15);
-      -moz-transform: scale(1.15);
-      transform: scale(1.15); }
-      .ipod .btn_ipod .click:hover::before, .ipod .btn_ipod .click:hover::after, .ipod .btn_ipod .click:focus::before, .ipod .btn_ipod .click:focus::after {
+      background: #fff;
+      z-index: 2;
+      box-shadow: 1px 1px 5px #333;
+      font-weight: 700; }
+      #ipod .btn_ipod .click::before, #ipod .btn_ipod .click::after {
+        -webkit-transition: transform 0.3s;
+        -moz-transition: transform 0.3s;
+        -o-transition: transform 0.3s;
+        transition: transform 0.3s;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        z-index: -1;
+        animation: circle 5s infinite forwards;
+        transition: transform 0.3s; }
+      #ipod .btn_ipod .click::after {
+        animation-delay: 0.5s; }
+      #ipod .btn_ipod .click:hover, #ipod .btn_ipod .click:focus {
         -webkit-transform: scale(1.15);
         -moz-transform: scale(1.15);
         transform: scale(1.15); }
-  .ipod #ipodList {
+        #ipod .btn_ipod .click:hover::before, #ipod .btn_ipod .click:hover::after, #ipod .btn_ipod .click:focus::before, #ipod .btn_ipod .click:focus::after {
+          -webkit-transform: scale(1.15);
+          -moz-transform: scale(1.15);
+          transform: scale(1.15); }
+  #ipod #ipodScreen {
     position: absolute;
     top: 41px;
-    left: 47px;
+    left: 42px;
     width: 395px;
-    height: 297px;
+    height: 295px;
     background: #fff;
     color: #222; }
-    .ipod #ipodList .ipod_head, .ipod #ipodList .myList li {
+    #ipod #ipodScreen .ipod_head, #ipod #ipodScreen .ipod_list li {
       width: 100%;
       height: 50px;
-      line-height: 50px;
-      padding-left: 20px; }
-    .ipod #ipodList .ipod_head {
+      line-height: 50px; }
+    #ipod #ipodScreen .ipod_head {
       display: -webkit-box;
       display: -moz-box;
       display: -ms-flexbox;
@@ -158,9 +157,10 @@ body.overflowy {
       align-items: center;
       background: linear-gradient(#fff, #555);
       border-bottom: 1px solid #222; }
-      .ipod #ipodList .ipod_head h2 {
-        font-size: 25px; }
-      .ipod #ipodList .ipod_head .head_right {
+      #ipod #ipodScreen .ipod_head h2 {
+        font-size: 25px;
+        padding-left: 20px; }
+      #ipod #ipodScreen .ipod_head .head_right {
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
@@ -169,47 +169,105 @@ body.overflowy {
         -webkit-justify-content: flex-end;
         justify-content: flex-end;
         -webkit-align-items: center;
-        align-items: center; }
-        .ipod #ipodList .ipod_head .head_right img {
+        align-items: center;
+        padding-right: 40px; }
+        #ipod #ipodScreen .ipod_head .head_right img {
           padding-right: 10px; }
-        .ipod #ipodList .ipod_head .head_right .play {
+        #ipod #ipodScreen .ipod_head .head_right .play {
           width: 30px; }
-        .ipod #ipodList .ipod_head .head_right .battery {
+        #ipod #ipodScreen .ipod_head .head_right .battery {
           width: 35px; }
-        .ipod #ipodList .ipod_head .head_right .btn_close img {
-          width: 28px; }
-    .ipod #ipodList .myList li {
+    #ipod #ipodScreen .ipod_list li {
       position: relative;
       font-size: 25px;
-      font-weight: 700;
       color: #000; }
-      .ipod #ipodList .myList li::before {
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        transform: rotate(45deg);
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        content: "";
-        display: block;
-        width: 13px;
-        height: 13px;
-        border-top: 4px solid #222;
-        border-right: 4px solid #222;
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        margin-top: -7.5px; }
-      .ipod #ipodList .myList li.on {
-        background: linear-gradient(#76C5DD, #0485C2);
-        color: #fff; }
-        .ipod #ipodList .myList li.on::before {
-          border-color: #fff; }
-      .ipod #ipodList .myList li a {
+      #ipod #ipodScreen .ipod_list li a {
         display: block;
         width: 100%;
-        height: 50px; }
+        height: 50px;
+        padding-left: 20px; }
+        #ipod #ipodScreen .ipod_list li a::before {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          transform: rotate(45deg);
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          -o-transition: all 0.5s;
+          transition: all 0.5s;
+          content: "";
+          display: block;
+          width: 13px;
+          height: 13px;
+          border-top: 4px solid #222;
+          border-right: 4px solid #222;
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          margin-top: -7.5px; }
+        #ipod #ipodScreen .ipod_list li a:hover, #ipod #ipodScreen .ipod_list li a:focus {
+          background: linear-gradient(#ffffff, #eefbff);
+          font-weight: 700; }
+      #ipod #ipodScreen .ipod_list li.on a {
+        background: linear-gradient(#76C5DD, #0485C2);
+        color: #fff;
+        font-weight: 700; }
+        #ipod #ipodScreen .ipod_list li.on a::before {
+          border-color: #fff; }
+  #ipod .btn_close {
+    position: absolute;
+    top: 53px;
+    right: 50px;
+    z-index: 900; }
+    #ipod .btn_close img {
+      width: 23px; }
+  #ipod .btn_ctrl {
+    position: absolute;
+    top: 415px;
+    left: 90px;
+    width: 300px;
+    height: 300px;
+    z-index: 500; }
+    #ipod .btn_ctrl ul {
+      width: 100%;
+      height: 100%; }
+    #ipod .btn_ctrl li {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      position: absolute; }
+      #ipod .btn_ctrl li.btn_left {
+        left: -31.5px;
+        top: 50%;
+        margin-top: -77.5px; }
+      #ipod .btn_ctrl li.btn_right {
+        right: -30px;
+        top: 50%;
+        margin-top: -77px; }
+      #ipod .btn_ctrl li.btn_play {
+        top: -33px;
+        left: 50%;
+        margin-left: -75px; }
+      #ipod .btn_ctrl li.btn_return {
+        bottom: -30px;
+        left: 50%;
+        margin-left: -74.5px; }
+      #ipod .btn_ctrl li img {
+        -webkit-transition: transform 0.3s;
+        -moz-transition: transform 0.3s;
+        -o-transition: transform 0.3s;
+        transition: transform 0.3s; }
+    #ipod .btn_ctrl li.on img, #ipod .btn_ctrl li:hover img, #ipod .btn_ctrl li:focus img {
+      -webkit-transform: scale(0.97);
+      -moz-transform: scale(0.97);
+      transform: scale(0.97); }
+  #ipod #dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); }
 
 /* cursor */
 .cursor {
@@ -373,30 +431,8 @@ body.overflowy {
     opacity: 0;
     transform: scale(1.7); } }
 #cnt2 {
-  height: 100vh;
-  position: relative;
-  border: 1px solid #f00;
-  /* display: none */ }
-  #cnt2 strong {
-    margin: 0 auto;
-    padding-top: 100px;
-    display: block;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 400; }
-  #cnt2 .earphone {
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    position: absolute;
-    top: calc(50% + 60px);
-    right: 400px; }
-
-#cnt3 {
   background: linear-gradient(#333 10%, #888 20%, #fcf8f1 30%, #fcb95e 50%, #f57e3c 100%); }
-  #cnt3 .intro_sulwhasoo {
+  #cnt2 .intro_sulwhasoo {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -407,9 +443,9 @@ body.overflowy {
     -webkit-align-items: center;
     align-items: center;
     height: 100vh; }
-    #cnt3 .intro_sulwhasoo .txt_sulwhasoo strong {
+    #cnt2 .intro_sulwhasoo .txt_sulwhasoo strong {
       color: #fcb95e; }
-    #cnt3 .intro_sulwhasoo .txt_sulwhasoo h2 {
+    #cnt2 .intro_sulwhasoo .txt_sulwhasoo h2 {
       font-size: 55px;
       background: linear-gradient(225deg, #fcf8f1 10%, #fcb95e 50%, #f57e3c 100%);
       color: transparent;
@@ -417,35 +453,35 @@ body.overflowy {
       background-clip: text;
       line-height: 1;
       font-weight: 900; }
-    #cnt3 .intro_sulwhasoo .txt_sulwhasoo p {
+    #cnt2 .intro_sulwhasoo .txt_sulwhasoo p {
       padding-top: 10px;
       color: #fff; }
-    #cnt3 .intro_sulwhasoo .computer {
+    #cnt2 .intro_sulwhasoo .computer {
       -webkit-transform: scale(0.65);
       -moz-transform: scale(0.65);
       transform: scale(0.65);
       position: relative;
       width: 1000px;
       height: 826px; }
-      #cnt3 .intro_sulwhasoo .computer .sulwhasoo_cnt {
+      #cnt2 .intro_sulwhasoo .computer .sulwhasoo_cnt {
         position: absolute;
         top: 37px;
         left: 41px; }
-  #cnt3 .monitor {
+  #cnt2 .monitor {
     position: absolute;
     top: 37px;
     left: 41px;
     width: 1000px;
     height: 579px;
     z-index: 10; }
-  #cnt3 .monitor_wrap {
+  #cnt2 .monitor_wrap {
     position: absolute;
     top: 37px;
     left: 41px;
     width: 917px;
     height: 507px;
     overflow: hidden; }
-  #cnt3 .up_img {
+  #cnt2 .up_img {
     position: absolute;
     top: 0;
     left: 0;
@@ -490,7 +526,7 @@ body.overflowy {
     line-height: 1;
     font-weight: 900; }
 
-#cnt4 {
+#cnt3 {
   height: 100vh; }
 
 /*# sourceMappingURL=style.css.map */
