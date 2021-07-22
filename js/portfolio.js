@@ -6,13 +6,25 @@ $(document).ready(function() {
     const mouseY = e.pageY;
     // console.log(mouseX, mouseY);
     gsap.to('.cursor', {left: mouseX-100, top: mouseY-100});
+    // gsap.to('.second_cursor', {duration: 0.3, delay: 0.1});
 
-  // face - 마우스 효과
-    const eyeBall = $('.eyeball')
-    const eyeBallX = eyeBall.width()/2 + eyeBall.offset().left;
-    const eyeBallY = eyeBall.height()/2 + eyeBall.offset().top;
-
-    // gsap.to('.pupil', {left: (mouseX - eyeBallX) + 5 + 'px', top: (mouseY - eyeBallY) + 6 + 'px'});
   });
-  $('#intro').show(10)
+/*   $('body').addClass('overflowy');
+  $('#intro').stop().delay(8000).fadeOut('slow', function () {
+    $('body').removeClass('overflowy');
+  }); */
+
+  const $ipod = $('#cnt1 .ipod');
+  // cnt1 ipod button 클릭해서 cnt2로 이동하기
+  // $ipod.on('click', function(){
+  //   $(this).animate({left: '400px'}, 1000, function(){
+  //     $(this).css('position','fixed');
+  //     // 윈도우창을 cnt2로 이동하기
+  //     $('html, body').stop().animate({scrollTop: $('#cnt2').offset().top}, 700, function(){
+  //       $ipod.find('.click').addClass('hidden');
+  //     });
+  //   });
+  // });
+    
+
 });

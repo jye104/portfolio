@@ -7,28 +7,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> 정예은 웹퍼블리셔 포트폴리오 </title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:regular,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/xeicon.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" href="favicon/apple-icon-180x180.png">
+  <link rel="shortcut icon" href="favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
   <script src="js/jquery-1.12.4.min.js"></script>
   <script src="js/gsap.min.js"></script>
   <script src="js/portfolio.js"></script>
 </head>
 
 <body>
-  <div class="cursor first_cursor"></div>
-  <div class="cursor second_cursor"></div>
-
-  <div id="face">
-    <div class="mouth"></div>
-      <div class="eyebrow left"></div>
-      <div class="eyeball left">
-        <div class="pupil"></div>
-      </div>
-      <div class="eyebrow right"></div>
-      <div class="eyeball right">
-        <div class="pupil"></div>
-      </div>
+  <div class="cursor_wrap">
+    <div class="cursor first_cursor"></div>
+    <div class="cursor second_cursor"></div>
   </div>
 
+  <div class="ipod">
+    <button type="button" class="btn_ipod">
+      <img src="ipod.png" alt="아이팟">
+      <span class="click">click</span>
+    </button>
+    <div id="ipodList">
+      <div class="ipod_head">
+        <h2>My list</h2>
+        <div class="head_right">
+          <img src="play.png" alt="" class="play">
+          <img src="battery.png" alt="" class="battery">
+          <button type="button" class="btn_close"><img src="close-cross.png" alt="닫기"></button>
+        </div>
+      </div>
+      <ul class="myList">
+        <li><a href="">Intro</a></li>
+        <li><a href="">Portfolio</a></li>
+        <li><a href="">About me</a></li>
+      </ul>
+    </div>
+  </div>
+  
   <div id="intro">
     <h2 class="txt">
       <p id="txt1">어떤 사람들은 디자인이 어떻게 보여질 것인가 (how it looks)를 의미한다고 생각하죠.</p>
@@ -39,21 +57,60 @@
   </div>
 
   <section id="cnt1">
-    <div class="txt_bg">
+    <div class="txt_bg" aria-hidden="true">
       <p>JEONG</p>
       <p>YEEUN</p>
     </div>
     <div class="txt_front">
-      <p>Welcome to my web!<br>
-         I'm Yeeun Jeong, web publisher.<br>
-         Scroll and click to enjoy my work ;D</p>
+      <h2>Welcome to my web!<br>I'm Yeeun Jeong, web publisher.<br>Scroll and click to enjoy my work ;D</h2>
     </div>
-    <button type="button">
-      <img src="ipod.png" alt="">
-    </button>
   </section>
 
-  <section id="cnt2">
+
+  <section id="cnt3">
+    <div class="intro_sulwhasoo">
+      <div class="txt_sulwhasoo">
+        <strong>part 1</strong>
+        <h2>Sulwhasoo</h2>
+        <p>우리나라의 대표 한방 화장품 브랜드인 설화수<br>홈페이지를 리뉴얼 하였습니다. 2030세대들의<br>피부 노화 대비를 위한 수요가 늘어남에 따라<br>다양한 연령층을 고려하며 더 고급지고
+          세련된<br>이미지를 살리고자 제작하게 되었습니다.</p>
+      </div>
+      <div class="computer">
+        <div class="monitor">
+          <img src="monitor1000.png" alt="컴퓨터 모니터">
+          <div class="monitor_wrap"><img src="sulwhasoo_brand_story.jpg" alt="모니터 속에 보이는 설화수 브랜드스토리 페이지" class="up_img"></div>
+        </div>        
+      </div>
+    </div>
+
+    <div class="brand_txt">
+      <h3>Brand Story</h3>
+      <p>기존 사이트의 단순하고 정적인 느낌을 탈피하여, 요즘 트랜드에 맞춘 Fullpage, Swiper형식
+        <br>fade효과를 사용하였습니다. Section마다 어떤 내용을 소개 하고있는지 tool tip으로 표시하여<br>쉽게 확인할 수 있도록 접근성을 향상시켰습니다.</p>
+    </div>
+
+    <div class="bg_sulwhasoo">
+      <span aria-hidden="true">Sulwhasoo</span>
+      <span aria-hidden="true">Sulwhasoo</span>
+    </div>
+
+    <div class="newsletter">
+      <div class="news_txt">
+        <h3>Newsletter</h3>
+        <p>기존 사이트의 단순하고 정적인 느낌을 탈피하여, 요즘 트랜드에 맞춘 Fullpage, Swiper형식
+          <br>fade효과를 사용하였습니다. Section마다 어떤 내용을 소개 하고있는지 tool tip으로 표시하여<br>쉽게 확인할 수 있도록 접근성을 향상시켰습니다.</p>
+      </div>
+      <img src="sulwhasoo_news.jpg" alt="설화수 뉴스레터 페이지">
+      <div class="brand_hover_txt">
+        <strong>hover, focus 효과</strong>
+        <p>이미지에 검정 마스크를 씌우고 해당 뉴스에<br>
+          관련된 주요 멘트를 해시태그로 표현하여<br>
+          어떤 내용에 대한 뉴스인지 나타내어 가독성을 높임</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cnt4">
 
   </section>
 
