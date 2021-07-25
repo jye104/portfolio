@@ -412,10 +412,10 @@
     #cnt2 .portfolio_ss .intro_sulwhasoo .txt_sulwhasoo h2 {
       background: linear-gradient(225deg, #fcf8f1 10%, #fcb95e 50%, #f57e3c 70%, #fcb95e 100%);
       -webkit-background-clip: text;
-      background-clip: text; }
+      background-clip: text;
+      text-align: center; }
     #cnt2 .portfolio_ss .intro_sulwhasoo .txt_sulwhasoo p {
-      color: #fff;
-      padding: 20px 0; }
+      color: #fff; }
     #cnt2 .portfolio_ss .intro_sulwhasoo .computer {
       -webkit-transform: scale(0.65);
       -moz-transform: scale(0.65);
@@ -469,7 +469,7 @@
       -moz-transition: all 0.3s;
       -o-transition: all 0.3s;
       transition: all 0.3s;
-      bottom: 20%;
+      bottom: 18%;
       left: 2%;
       font-size: 55px;
       line-height: 1;
@@ -482,7 +482,7 @@
         margin-top: 0;
         opacity: 1; }
     #cnt2 .brand_txt p {
-      background: white;
+      background: rgba(255, 255, 255, 0.3);
       bottom: 3%;
       left: 4%; }
 
@@ -593,6 +593,10 @@
     background: linear-gradient(225deg, #ec6060 10%, #f8c6c6 50%, #ffc9c9 80%, #ec6060 100%);
     -webkit-background-clip: text;
     background-clip: text; }
+  .portfolio_ww .txt_withWine .btn_more_wrap .square {
+    stroke: #ec8787; }
+  .portfolio_ww .txt_withWine .btn_more_wrap:hover a + svg .square, .portfolio_ww .txt_withWine .btn_more_wrap:focus + svg .square {
+    animation-name: square2; }
   .portfolio_ww img {
     width: 900px;
     height: 591px; }
@@ -733,7 +737,7 @@
   -webkit-align-items: center;
   align-items: center;
   height: 100vh; }
-  #cnt3 #container_wrap .container h3, #cnt3 #container_wrap .container img, #cnt3 #container_wrap .container p {
+  #cnt3 #container_wrap .container h3, #cnt3 #container_wrap .container img, #cnt3 #container_wrap .container p, #cnt3 #container_wrap .container span {
     -webkit-transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -moz-transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     -o-transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -753,6 +757,11 @@
     -moz-transition-delay: 0.5s;
     -o-transition-delay: 0.5s;
     transition-delay: 0.5s; }
+  #cnt3 #container_wrap .container span {
+    -webkit-transition-delay: 0.8s;
+    -moz-transition-delay: 0.8s;
+    -o-transition-delay: 0.8s;
+    transition-delay: 0.8s; }
   #cnt3 #container_wrap .container p {
     -webkit-transition-delay: 1.2s;
     -moz-transition-delay: 1.2s;
@@ -763,7 +772,7 @@
     transform: translate(0, 200px);
     line-height: 1.8;
     font-weight: 300; }
-  #cnt3 #container_wrap .container.pllx h3, #cnt3 #container_wrap .container.pllx img, #cnt3 #container_wrap .container.pllx p {
+  #cnt3 #container_wrap .container.pllx h3, #cnt3 #container_wrap .container.pllx img, #cnt3 #container_wrap .container.pllx p, #cnt3 #container_wrap .container.pllx span {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
     transform: translate(0, 0);
@@ -809,6 +818,8 @@
   #cnt3 .info .info_txt .hello + p {
     margin-left: -10px;
     font-size: 25px; }
+  #cnt3 .info .info_txt .name {
+    font-size: 28px; }
 #cnt3 #container_wrap .wa {
   -webkit-justify-content: flex-end;
   justify-content: flex-end; }
@@ -822,12 +833,13 @@
   #cnt3 #container_wrap .wa .photo_hover {
     width: 700px;
     height: 500px;
-    perspective: 1000px;
+    perspective: 1200px;
     position: relative;
     margin-right: 100px; }
   #cnt3 #container_wrap .wa .hover {
     left: auto;
-    right: -3%; }
+    right: -3%;
+    animation: hover2 0.8s alternate-reverse infinite; }
 #cnt3 #container_wrap .program {
   flex-direction: column;
   -webkit-flex-direction: column;
@@ -843,6 +855,8 @@
     align-items: flex-end;
     line-height: 1;
     font-size: 75px; }
+    #cnt3 #container_wrap .program .program_txt h2 img {
+      animation: rotate 1s alternate-reverse infinite; }
   #cnt3 #container_wrap .program .program_txt p {
     font-size: 20px;
     text-align: center;
@@ -879,7 +893,7 @@
       filter: blur(3px) grayscale(100%); }
       #cnt3 #container_wrap .program .program_list li span {
         font-size: 18px; }
-    #cnt3 #container_wrap .program .program_list li:hover {
+    #cnt3 #container_wrap .program .program_list li:hover, #cnt3 #container_wrap .program .program_list li.on {
       filter: none;
       -webkit-transform: scale(1.2);
       -moz-transform: scale(1.2);
@@ -906,7 +920,9 @@
   visibility: hidden;
   width: 1500px;
   height: 750px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  background: #ffc9c9;
+  color: #333; }
 
 .md_close_btn {
   -webkit-transition: all 0.2s;

@@ -166,6 +166,12 @@
               누구나 쉽게 어디에서나 즐길 수 있는 가상의 온라인 와인샵을<br>
               만들었습니다. 반응형으로 구성하여 태블릿, 모바일로도 쉽게<br>
               접근할 수 있도록 제작하였습니다.</p>
+            <div class="btn_more_wrap">
+              <a href="https://jye104.github.io/withWine/" class="btn_more" target="_blank">web 바로가기
+                more</a>
+              <svg>
+                <rect class="square" /></svg>
+            </div>
           </div>
           <img src="images/withwineAll.png" alt="4가지 모니터별로 보이는 with wine 홈페이지">
           <div class="wrap_open_btn">
@@ -226,13 +232,13 @@
             <div id="container_wrap">
               <div class="container info">
                 <div class="photo_hover">
-                  <span class="hover">hover</span>
+                  <img src="images/hover.png" alt="hover" class="hover">
                   <div class="front"><img src="images/about_img.jpg" alt=""></div>
                   <div class="back"><img src="images/about_img2.jpg" alt=""></div>
                 </div>
                 <div class="info_txt">
                   <p class="hello">H<span class="ello">ello</span></p>
-                  <p> 안녕하세요 <br>웹퍼블리셔 <strong>정예은</strong>입니다.</p>
+                  <p> 안녕하세요 <br>웹퍼블리셔 <strong class="name">정예은</strong>입니다.</p>
                   <p>저는 비전공자이지만 4개월간 <strong>'UXUI 웹디지이너 과정'</strong>을 열심히 수강하여<br> 지금의 포트폴리오와 작업물을 만들어 수료할 수 있었습니다. 과정
                     이후에도 <br>정체되어있지 않고, 발전을 위해 끊임없이 공부하며 <strong>발전된 모습</strong>을 보여드리겠습니다.</p>
                 </div>
@@ -240,12 +246,13 @@
               </div>
               <div class="container wa">
                 <div class="wa_txt">
-                  <p><strong>웹표준 및 웹접근성</strong>을 지키기 위해 노력합니다. 제가 만든 <br>사이트는 장애인이든 비장애인이든, 누구나 제약없이 이용하도록<br> 접근성을 지킨 마크업을 하도록 노력합니다.</p>
+                  <p><strong>웹표준 및 웹접근성</strong>을 지키기 위해 노력합니다. 제가 만든<br> 사이트는 장애인이든 비장애인이든, 누구나 <strong>제약없이</strong>
+                    <br>이용하도록 접근성을 지킨 마크업을 하도록 노력합니다.</p>
                   <p class="ex"> ex) tab, modal, slider 등의 aria, 또는 form 태그의 label 등
                   </p>
                 </div>
                 <div class="photo_hover">
-                  <span class="hover">hover</span>
+                  <img src="images/hover2.png" alt="hover" class="hover">
                   <div class="front">
                     <img src="images/withwine_w3c.jpg" alt="위드와인 페이지 w3c에서 마크업,css 준수 인증 받은 화면">
                   </div>
@@ -256,7 +263,7 @@
               </div>
               <div class="container program">
                 <div class="program_txt">
-                  <h2>이런 것을 다룰 수 있어요 <img src="images/like.png" alt="엄지손가락"></h2>                  
+                  <h2>이런 것을 다룰 수 있어요 <img src="images/like.png" alt="엄지손가락"></h2>
                   <p>* 마우스를 가까이 대거나 키보드로 focus를 보내보세요!</p>
                 </div>
                 <ul class="program_list">
@@ -264,8 +271,8 @@
                   <li><img src="images/css.png" alt=""><span>Css</span></li>
                   <li><img src="images/sass.png" alt=""><span>Sass</span></li>
                   <li><img src="images/javascript.png" alt=""><span>Javascript <br>&amp; jQuery</span></li>
-                  </ul>
-                  <ul class="program_list">
+                </ul>
+                <ul class="program_list">
                   <li><img src="images/photoshop.png" alt=""><span>Photoshop</span></li>
                   <li><img src="images/xd.png" alt=""><span>XD</span></li>
                   <li><img src="images/zeppelin.png" alt=""><span>Zeplin</span></li>
@@ -292,34 +299,56 @@
   </div>
 
   <div class="md_box" id="modal1" role="dialog" aria-modal="true" aria-labelledby="mdTit1">
-    <figure>
-      <img src="images/withwine1440.jpg" alt="">
-      <figcaption></figcaption>
-    </figure>
-    <button class="md_close_btn" type="button" data-link="last">닫기</button>
-  </div>
-  <div class="md_box" id="modal2" role="dialog" aria-modal="true" aria-labelledby="mdTit2">
-    <figure>
-      <img src="images/withwine1440.jpg" alt="">
-      <figcaption></figcaption>
-    </figure>
-    <button class="md_close_btn" type="button" data-link="last">닫기</button>
-  </div>
-  <div class="md_box" id="modal3" role="dialog" aria-modal="true" aria-labelledby="mdTit3">
-    <figure>
-      <img src="" alt="">
-      <figcaption></figcaption>
-    </figure>
-    <button class="md_close_btn" type="button" data-link="last">닫기</button>
-  </div>
-  <div class="md_box" id="modal4" role="dialog" aria-modal="true" aria-labelledby="mdTit4">
-    <figure>
-      <img src="" alt="">
-      <figcaption></figcaption>
-    </figure>
+    <div class="md_sticky_Wrap">
+      <div class="md_sticky">
+        <img src="" alt="">
+      </div>
+      <div class="md_txt">
+        <h3>1920 해상도</h3>
+        <p></p>
+      </div>
+    </div>    
     <button class="md_close_btn" type="button" data-link="last">닫기</button>
   </div>
 
+  <div class="md_box" id="modal2" role="dialog" aria-modal="true" aria-labelledby="mdTit2">
+    <div class="md_sticky_Wrap">
+      <div class="md_sticky">
+        <img src="" alt="">
+      </div>
+      <div class="md_txt">
+        <h3>1440 해상도</h3>
+        <p></p>
+      </div>
+    </div> 
+    <button class="md_close_btn" type="button" data-link="last">닫기</button>
+  </div>
+
+  <div class="md_box" id="modal3" role="dialog" aria-modal="true" aria-labelledby="mdTit3">
+    <div class="md_sticky_Wrap">
+      <div class="md_sticky">
+        <img src="" alt="">
+      </div>
+      <div class="md_txt">
+        <h3>1080 해상도</h3>
+        <p></p>
+      </div>
+    </div> 
+    <button class="md_close_btn" type="button" data-link="last">닫기</button>
+  </div>
+
+  <div class="md_box" id="modal4" role="dialog" aria-modal="true" aria-labelledby="mdTit4">
+    <div class="md_sticky_Wrap">
+      <div class="md_sticky">
+        <img src="" alt="">
+      </div>
+      <div class="md_txt">
+        <h3>770 해상도</h3>
+        <p></p>
+      </div>
+    </div> 
+    <button class="md_close_btn" type="button" data-link="last">닫기</button>
+  </div>
 
 </body>
 

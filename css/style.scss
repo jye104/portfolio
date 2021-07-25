@@ -187,8 +187,8 @@
       position: sticky; top: 0; overflow: hidden;
       .txt_sulwhasoo{
         strong{color: #fcb95e;}
-        h2{background: linear-gradient(225deg, #fcf8f1 10%, #fcb95e 50%, #f57e3c 70%, #fcb95e 100%); -webkit-background-clip: text; background-clip: text;}
-        p{color: #fff; padding: 20px 0;}
+        h2{background: linear-gradient(225deg, #fcf8f1 10%, #fcb95e 50%, #f57e3c 70%, #fcb95e 100%); -webkit-background-clip: text; background-clip: text; text-align: center;}
+        p{color: #fff;}
       }
       .computer{
         @include transform(scale(0.65));
@@ -214,12 +214,12 @@
       position: absolute;top: 0;left: 0;width: 100%;z-index: 100;/* visibility: hidden;opacity: 0; */
       h3, p{padding: 10px 15px; position: absolute;}
       h3{
-        @include transition(all 0.3s); bottom: 20%; left: 2%;
+        @include transition(all 0.3s); bottom: 18%; left: 2%;
         font-size: 55px; line-height: 1; font-weight: 900; color: #fcf8f1; text-shadow: 3px 3px 0px #390510, 6px 6px 0px #f57e3c, 9px 9px 0px #c11a2b;
         &:hover{text-shadow: 5px 5px 0px #390510, 7px 7px 0px #f57e3c, 12px 12px 0px #c11a2b;}
         &.on{margin-top: 0; opacity: 1;}
       }
-      p{background:rgba(255, 255, 255, 1); bottom: 3%; left: 4%; }
+      p{background:rgba(255, 255, 255, .3); bottom: 3%; left: 4%; }
     }
   }
 
@@ -265,11 +265,16 @@
   @include align-items;
   @include justify-content(space-around);
   position: relative; height: 100vh;color: #333;
-  background: linear-gradient(rgb(255, 239, 239)  30%, #FFF1F1 50%, #ffdede 70%, #ffc9c9 80%);
+  background: linear-gradient(#ffefef  30%, #FFF1F1 50%, #ffdede 70%, #ffc9c9 80%);
   .txt_withWine{
     strong{color: #ec8787;}
     h2{background: linear-gradient(225deg, #ec6060 10%, #f8c6c6 50%, #ffc9c9 80%, #ec6060 100%); -webkit-background-clip: text; background-clip: text;}
-
+    .btn_more_wrap{
+       .square{stroke: #ec8787;}
+      &:hover a + svg .square, &:focus + svg .square{
+        animation-name: square2;
+      }
+    }
   }
   img{width: 900px; height: 591px;}
   .wrap_open_btn{
@@ -329,7 +334,7 @@
     @include justify-content(flex-start);
     @include align-items;
     height: 100vh;
-    h3, img, p{
+    h3, img, p, span{
       @include transition(all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94));
       opacity: 0;
     }
@@ -342,13 +347,16 @@
     img{
       @include transition-delay(0.5s);
     }
+    span{
+      @include transition-delay(0.8s);
+    }
     p{
       @include transition-delay(1.2s);
       @include transform(translate(0, 200px));
       line-height: 1.8; font-weight: 300;
     }
     &.pllx{
-      h3, img, p{
+      h3, img, p, span{
         @include transform(translate(0, 0));
         opacity: 1;
       }
@@ -377,6 +385,7 @@
       }
       p{font-size: 20px;}
       .hello + p{margin-left: -10px; font-size: 25px;}
+      .name{font-size: 28px;}
     }
   }
   #container_wrap .wa{
@@ -386,10 +395,11 @@
       .ex{font-size: 18px; color: #c5c5c5;}
     }
     .photo_hover{
-      width: 700px; height: 500px; perspective: 1000px; position: relative; margin-right: 100px;
+      width: 700px; height: 500px; perspective: 1200px; position: relative; margin-right: 100px;
     }
-    .hover{left: auto; right: -3%;}
-    img{}
+    .hover{
+      left: auto; right: -3%; animation: hover2 0.8s alternate-reverse infinite;
+    }
   }
   #container_wrap .program{
     @include flex-direction;
@@ -400,6 +410,7 @@
         @include align-items(flex-end);
         line-height: 1;
         font-size: 75px;
+        img{animation: rotate 1s alternate-reverse infinite;}
       }
       p{font-size: 20px; text-align: center; padding-top: 35px;}
     }
@@ -417,7 +428,7 @@
         padding: 20px 30px 0 0; filter: blur(3px) grayscale(100%);
         span{font-size: 18px;}
       }
-      li:hover{
+      li:hover, li.on{
         filter: none;
         @include transform(scale(1.2));      
       }
@@ -431,7 +442,7 @@
 // 모달창
 #md_dim, .md_box{position: fixed; z-index: 20000;}
 #md_dim{display: none; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, .5);}
-.md_box{top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 50px; visibility: hidden; width: 1500px; height: 750px; overflow-y: scroll;}
+.md_box{top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 50px; visibility: hidden; width: 1500px; height: 750px; overflow-y: scroll; background: #ffc9c9; color: #333;}
 .md_close_btn{
   @include transition(all 0.2s);
   position: absolute; top: 20px; right: 20px; font-weight: 700; width: 50px; height: 40px; background: #ec8787; color: #fff; border-radius: 10px;

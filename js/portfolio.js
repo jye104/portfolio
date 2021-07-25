@@ -5,7 +5,7 @@ $(document).ready(function () {
     const mouseY = e.pageY;
     const cnt3Y = $('#cnt3').offset().top;
     //console.log(mouseX)
-    if(mouseX >= 1700){
+    if(mouseX >= 1880){
       $('body').addClass('overflowX');
     } else{
       gsap.to('.first_cursor', {left: mouseX - 15, top: mouseY - 15},'easeOutBounce');

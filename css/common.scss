@@ -69,9 +69,9 @@ section, figure{display: block;}
 .opacity{opacity: 0 !important;}
 .main_tit{
   h2{
-    font-size: 70px; color: transparent; line-height: 1; font-weight: 900;
+    font-size: 70px; color: transparent; line-height: 1; font-weight: 900; text-align: center;
   }
-  p{padding-top: 20px; line-height: 1.7; font-size: 18px;}
+  p{padding: 20px 0; line-height: 1.7; font-size: 18px;}
 }
 .sub_tit{
   h3, p{padding: 20px 35px;}
@@ -93,15 +93,10 @@ section, figure{display: block;}
   &:hover a + svg .square, &:focus + svg .square{
     animation: square 1s ease 0s 1 normal forwards;
   }
-
 }
 .hover{
-  @include transition(transform 0.3s); text-align: center;
-  position: absolute; bottom: 5%; left: -5%; color: #dfdfdf; width: 60px; height: 30px; line-height: 30px; z-index: 2; font-weight: 700; font-size: 14px; background: rgba(0, 0, 0, .2);
-  &::before, &::after{
-    @include transition(transform 0.3s);
-    content: ""; position: absolute; top: 0; left: 0; width: 60px; height: 30px; background: rgba(0, 0, 0, 0.2);  z-index: -1; animation: circle 5s infinite forwards; transition: transform 0.3s;}
-  &::after{animation-delay: 0.5s;}
+  @include transition(transform 0.3s); 
+  position: absolute; bottom: -60px; right: -60px; width: 60px; height: 60px; z-index: 2; animation: hover 1s alternate-reverse infinite;
 }
 .photo_hover{
   position: relative; 
@@ -190,11 +185,42 @@ body.overflowX{overflow-X: hidden;}
   0%{stroke-width: 10; stroke-dasharray: 80 500; stroke-dashoffset: -420; stroke: #fcb95e;}
   100%{stroke-width: 7; stroke-dasharray: 420; stroke-dashoffset: 0; stroke: #f57e3c;}
 }
+@keyframes square2 {
+  0%{stroke-width: 10; stroke-dasharray: 80 500; stroke-dashoffset: -420; stroke: #ffdcdc;}
+  100%{stroke-width: 7; stroke-dasharray: 420; stroke-dashoffset: 0; stroke: #ec8787;}
+}
 @keyframes stress {
   0%{
     @include transform(scale(1));
   }
   100%{
     @include transform(scale(1.1));
+  }
+}
+@keyframes hover {
+  0%{
+    @include transform(translate(-30px, -30px));
+  }
+  100%{
+    @include transform(translate(0, 0));
+  }
+}
+@keyframes hover2 {
+  0%{
+    @include transform(translateY(-15px));
+  }
+  100%{
+    @include transform(translateY(0));
+  }
+}
+@keyframes rotate {
+  0%{
+    @include transform(rotate(-10deg));
+  }
+  50%{
+    @include transform(rotate(0deg));
+  }
+  100%{
+    @include transform(rotate(0deg));
   }
 }
