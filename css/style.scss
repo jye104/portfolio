@@ -305,8 +305,8 @@
     @include flex;
     @include justify-content;
     @include flex-direction;
-    padding: 50px 70px 0 50px; width: 100%;
-    #contents{width: 100%;}
+    width: 100%; position: relative;
+    .contents{width: 100%; position: relative; overflow: hidden;}
   }
   .sticky{
     @include flex;
@@ -334,7 +334,7 @@
     @include flex;
     @include justify-content(flex-start);
     @include align-items;
-    height: 100vh;
+    height: 100vh; padding: 50px 70px 0 50px; 
     h3, img, p, span{
       @include transition(all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94));
       opacity: 0;
@@ -390,6 +390,7 @@
   }
   #container_wrap .wa{
     @include justify-content(flex-end);
+    overflow: hidden;
     .wa_txt{
       font-size: 23px; padding-right: 20px; text-align: right;
       .ex{font-size: 18px; color: #8d8d8d;}
@@ -410,7 +411,7 @@
         @include align-items(flex-end);
         line-height: 1;
         font-size: 75px;
-        img{animation: rotate 1s alternate-reverse infinite;}
+        img{animation: rotateThumb 1s alternate-reverse infinite;}
       }
       p{font-size: 20px; text-align: center; padding-top: 35px;}
     }
@@ -434,17 +435,88 @@
       }
     }
   }
+  .decoration{
+    width: 100%; height: 100%; overflow: hidden;
+  }
   &.spring{
     background: #ffdee4; color: #333;
+    .hover{display: none;}
   }
   &.summer{
     background: #b1e9ff; color: #333;
+    .hover{display: none;}
   }
   &.fall{
     background: #9e4903;
+    .hover{display: none;}
   }
   &.winter{
-    background: #eee; color: #333;
+    background: #9c9c9c; color: #333;
+    .hover{display: none;}
+    .bg_deco{
+      width: 100px; height: 100px; background: url("../images/snow.png"); border-radius: 50%; position: absolute;
+      &.deco1{
+        @include transform(scale(0.9));
+        opacity: 0.2;
+        animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+      }
+      &.deco2{          
+        @include transform(scale(0.6));
+        left: 1320px; opacity: 0.5; animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+      }
+      &.deco3{
+        @include transform(scale(1));
+        left: 180px; opacity: 0.3; animation: moveclouds 22s linear infinite, sideWays 4s ease-in-out infinite alternate;
+      }
+      &.deco4{
+        @include transform(scale(0.75));
+        left: 1810px; opacity: 0.35; animation: moveclouds 18s linear infinite, sideWays 6s ease-in-out infinite alternate;
+      }
+      &.deco5{
+        @include transform(scale(0.8));
+        left: 350px; opacity: 0.3; animation: moveclouds 27s linear infinite, sideWays 2s ease-in-out infinite alternate;
+      }
+      &.deco6{
+        @include transform(scale(0.95));
+        left: 630px; opacity: 0.3; animation: moveclouds 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
+      }
+      &.deco7{
+        @include transform(scale(0.45));
+        left: 850px; opacity: 0.7; animation: moveclouds 20s linear infinite, sideWays 3s ease-in-out infinite alternate;
+      }
+      &.deco8{
+        @include transform(scale(0.5));
+        left: 980px; opacity: 0.5; animation: moveclouds 15s linear infinite, sideWays 6s ease-in-out infinite alternate;
+      }
+      &.deco9{
+        @include transform(scale(0.85));
+        left: 1640px; opacity: 0.8; animation: moveclouds 17s linear infinite, sideWays 4s ease-in-out infinite alternate;
+      }
+      &.deco10{
+        @include transform(scale(0.6));
+        left: 1000px; opacity: 0.9; animation: moveclouds 23s linear infinite, sideWays 2s ease-in-out infinite alternate;
+      }
+    }
+    #container_wrap .wa .wa_txt .ex {
+      color: rgba(3,3,3,.5);
+    }
+    .info .deco{
+      background: url("../images/santa.png") no-repeat; width: 243px; height: 500px; margin-top: 500px; animation: rotateSanta 1s cubic-bezier(0.39, 0.58, 0.57, 1) alternate-reverse infinite; position: absolute; right: 0;
+    }
+    .wa .deco{
+      background: url("../images/snowman_ski.png") no-repeat; width: 500px; height: 500px; position: absolute; left: 0; animation: santaSki 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    .skill{ position: relative;
+      .deco{
+        background: url("../images/tree.png") no-repeat; width: 400px; height: 591px; position: absolute; bottom: 0; right: 0px; z-index: 5; animation: treeShake 5s infinite;
+      }
+      .deco2{
+        background: url("../images/gift1.png") no-repeat; width: 150px; height: 150px; position: absolute; bottom: -20px; right: -100px; animation: gift 5s infinite, move 1.5s cubic-bezier(0.51, 0.11, 0.57, 1) alternate-reverse  infinite;
+      }
+      .deco3{
+        content: ""; position: absolute; background: url("../images/gift2.png") no-repeat; width: 150px; height: 150px; bottom: 0; animation: rotateSanta 1s ease-in-out alternate-reverse infinite, gift 5s infinite ; right: 300px;
+      }
+    }
   }
 }
 

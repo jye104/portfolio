@@ -215,7 +215,7 @@ body.overflowX{overflow-X: hidden;}
     @include transform(translateY(0));
   }
 }
-@keyframes rotate {
+@keyframes rotateThumb {
   0%{
     @include transform(rotate(-10deg));
   }
@@ -224,5 +224,63 @@ body.overflowX{overflow-X: hidden;}
   }
   100%{
     @include transform(rotate(0deg));
+  }
+}
+@keyframes rotateSanta {
+  0%{
+    @include transform(rotate(-5deg));
+    transform-origin: bottom;
+  }
+  100%{
+    @include transform(rotate(0deg));
+    transform-origin: bottom;
+  }
+}
+@keyframes moveclouds { 
+  0%{top: 0;}
+  100%{top: 4169px;}
+}
+@keyframes sideWays { 
+  0%{margin-left:0px;}
+  100%{margin-left:100px;}
+}
+@keyframes move { 
+  0%{right: 100px;}
+  100%{right: 0;}
+}
+@keyframes santaSki {
+  0%{left: 0; margin-top: 700px;}
+  50%{left: 50%; margin-top: 800px;}
+  100%{left: 100%; margin-top: 900px;}
+}
+@keyframes treeShake {
+  0%{
+    @include transform(rotate(-5deg));
+  }
+  3%{
+    @include transform(rotate(5deg));
+  }
+  6%{
+    @include transform(rotate(-5deg));
+  }
+  9%{
+    @include transform(rotate(5deg));
+  }
+  10%{
+    @include transform(rotate(0deg));
+  }
+  70%{
+    @include transform(rotate(0deg));
+  }
+  100%{
+    @include transform(rotate(0deg));
+  }
+}
+@keyframes gift {
+  0%{
+    bottom: 30px; opacity: 1;
+  }
+  100%{
+    bottom: -500px; opacity: 0;
   }
 }
