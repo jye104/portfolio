@@ -63,10 +63,12 @@ section, figure{display: block;}
 .p_r{position: relative;}
 .p_a{position: absolute;}
 .p_f{position: fixed;}
+.d_b{display: block;}
 .d_n{display: none !important;}
 .hidden{visibility: hidden;}
 .blind{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
 .opacity{opacity: 0 !important;}
+.visible{opacity: 1 !important; visibility: visible !important;}
 .main_tit{
   h2{
     font-size: 70px; color: transparent; line-height: 1; font-weight: 900; text-align: center;
@@ -151,7 +153,7 @@ body.overflowX{overflow-X: hidden;}
 /* keyframe */
 @keyframes blink {
   0%{border-color: transparent;}
-  50%{border-color: #333}
+  50%{border-color: #fff}
   100%{border-color: transparent;}
 }
 @keyframes typing {
@@ -213,7 +215,7 @@ body.overflowX{overflow-X: hidden;}
     @include transform(translateY(0));
   }
 }
-@keyframes rotate {
+@keyframes rotateThumb {
   0%{
     @include transform(rotate(-10deg));
   }
@@ -224,3 +226,64 @@ body.overflowX{overflow-X: hidden;}
     @include transform(rotate(0deg));
   }
 }
+<<<<<<< HEAD
+@keyframes rotateSanta {
+  0%{
+    @include transform(rotate(-5deg));
+    transform-origin: bottom;
+  }
+  100%{
+    @include transform(rotate(0deg));
+    transform-origin: bottom;
+  }
+}
+@keyframes moveclouds { 
+  0%{top: 0;}
+  100%{top: 4169px;}
+}
+@keyframes sideWays { 
+  0%{margin-left:0px;}
+  100%{margin-left:100px;}
+}
+@keyframes move { 
+  0%{right: 100px;}
+  100%{right: 0;}
+}
+@keyframes santaSki {
+  0%{left: 0; margin-top: 700px;}
+  50%{left: 50%; margin-top: 800px;}
+  100%{left: 100%; margin-top: 900px;}
+}
+@keyframes treeShake {
+  0%{
+    @include transform(rotate(-5deg));
+  }
+  3%{
+    @include transform(rotate(5deg));
+  }
+  6%{
+    @include transform(rotate(-5deg));
+  }
+  9%{
+    @include transform(rotate(5deg));
+  }
+  10%{
+    @include transform(rotate(0deg));
+  }
+  70%{
+    @include transform(rotate(0deg));
+  }
+  100%{
+    @include transform(rotate(0deg));
+  }
+}
+@keyframes gift {
+  0%{
+    bottom: 30px; opacity: 1;
+  }
+  100%{
+    bottom: -500px; opacity: 0;
+  }
+}
+=======
+>>>>>>> b1664d26fbe26216dbb4ab8cfc0adbee8bad853f
