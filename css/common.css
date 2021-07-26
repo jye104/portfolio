@@ -63,6 +63,9 @@ section, figure {
 .p_f {
   position: fixed; }
 
+.d_b {
+  display: block; }
+
 .d_n {
   display: none !important; }
 
@@ -80,6 +83,10 @@ section, figure {
 
 .opacity {
   opacity: 0 !important; }
+
+.visible {
+  opacity: 1 !important;
+  visibility: visible !important; }
 
 .main_tit h2 {
   font-size: 70px;
@@ -244,7 +251,7 @@ body.overflowX {
   0% {
     border-color: transparent; }
   50% {
-    border-color: #333; }
+    border-color: #fff; }
   100% {
     border-color: transparent; } }
 @keyframes typing {

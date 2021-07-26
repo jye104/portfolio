@@ -63,10 +63,12 @@ section, figure{display: block;}
 .p_r{position: relative;}
 .p_a{position: absolute;}
 .p_f{position: fixed;}
+.d_b{display: block;}
 .d_n{display: none !important;}
 .hidden{visibility: hidden;}
 .blind{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
 .opacity{opacity: 0 !important;}
+.visible{opacity: 1 !important; visibility: visible !important;}
 .main_tit{
   h2{
     font-size: 70px; color: transparent; line-height: 1; font-weight: 900; text-align: center;
@@ -151,7 +153,7 @@ body.overflowX{overflow-X: hidden;}
 /* keyframe */
 @keyframes blink {
   0%{border-color: transparent;}
-  50%{border-color: #333}
+  50%{border-color: #fff}
   100%{border-color: transparent;}
 }
 @keyframes typing {
