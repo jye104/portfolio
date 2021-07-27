@@ -185,6 +185,19 @@
       @include transition(all 0.8s);
       height: 100vh; 
       position: sticky; top: 0; overflow: hidden;
+      .scroll_down{
+        position: absolute; left: 50%; bottom: 30px;
+        display: block; border: 1px solid #fff; width: 40px; height: 65px; font-size: 11px; text-align: center; border-radius: 30px; padding-top: 10px; font-weight: 300;
+        &::before{
+          content: ""; position: absolute;background: #fff; width: 1px; height: 30px; bottom: -20px; left: 50%; margin-left: -0.5px; animation: scrollDown 0.6s alternate-reverse infinite;
+        
+        }
+        &::after{
+          @include transform(rotate(45deg));
+          content: ""; position: absolute;  width: 10px; height: 10px; border: 1px solid #fff; border-left: none; border-top: none; bottom: -20px; left: 50%; margin-left: -5.5px; animation: scrollDown 0.6s alternate-reverse infinite;
+        }
+      }
+
       .txt_sulwhasoo{
         position: relative;
         strong{color: #fcb95e; opacity: 0.1; font-size: 100px; position: absolute; top: -87px;left: -46px; font-weight: 300;}
@@ -306,13 +319,14 @@
     @include justify-content;
     @include flex-direction;
     width: 100%; position: relative;
+    .controller{display: none;}
     .contents{width: 100%; position: relative; overflow: hidden;}
   }
   .sticky{
     @include flex;
     @include flex-direction;
     @include align-items(flex-start);
-    position: sticky; -webkit-position: -webkit-stacky; height: 100px; top: 20px;box-sizing: border-box; z-index: 100; margin-left: 20px;
+    position: sticky; -webkit-position: -webkit-stacky; height: 100px;  width: 15%; top: 20px; box-sizing: border-box; z-index: 100; margin-left: 20px;
     strong{display: block; font-size: 20px; color: #ffff80; padding-bottom: 10px;}
   }
   .sticky_btn{    
@@ -380,7 +394,7 @@
     .info_txt{
        padding-left: 20px;
       .hello{
-        font-size: 100px; font-weight: 900 !important; margin-left: -100px; line-height: 1.2 !important; color: #e6e6e6;
+        font-size: 100px; font-weight: 900 !important; margin-left: -95px; line-height: 1.2 !important; color: #e6e6e6;
         span{display: inline-block; -webkit-text-stroke: 4px #fff; -webkit-text-fill-color: transparent;}
       }
       p{font-size: 20px;}
@@ -439,66 +453,95 @@
     width: 100%; height: 100%; overflow: hidden;
   }
   &.spring{
-    background: #ffdee4; color: #333;
+    background: #ffeaee; color: #333;
+    .cnt3_wrap .sticky strong{color: #e94a4a;}
+    .cnt3_wrap #container_wrap .info .info_txt .hello{
+      color: #ec8787;
+      span{-webkit-text-stroke: 4px #ec8787; }
+    }
+    .bg_deco{
+      width: 100px; height: 100px; background-image: url("../images/flower_one.png"); position: absolute;
+    }
+    #container_wrap{
+      @include flex;
+      height: 95vh; overflow: hidden;
+      .container{height: 95vh; width: 100%;}
+    }
     .hover{display: none;}
+    .controller{
+      display: block;
+      #prev, #next{
+        position: absolute; top:450px; width: 80px; height: 70px; background: rgba(255, 34, 34, 0.3); color: #fff; transform: translateY(-50%); border-radius: 30px; 
+      }
+      #prev{left: 35%}
+      #next{right: 35%;}
+    }
+    .pagination{
+      @include translateX-50;
+      position: absolute; top: 415px; left: 50%; font-size: 20px; line-height: 70px; width: 200px; height: 70px; text-align: center;
+      ul{      
+        @include flex;
+        @include justify-content(space-around);
+        li{
+          .txt{
+            @include translateX-50;
+            position: absolute; top: 0; left: 50%; opacity: 0;
+          }
+          .icon{
+            display: block; position: relative; width: 25px; height: 25px; border: 2px solid #ff8787; margin-top: 35px; border-radius: 50%;
+            &:after{
+              content: ""; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: #ff8787; top: 0;left: 0;}
+          }
+          &.on{
+            .txt{opacity: 1;}
+            .icon::after{
+              @include transform(scale(0.5));
+            }
+          }
+        }
+      }
+    }
   }
   &.summer{
     background: #b1e9ff; color: #333;
+    .cnt3_wrap .sticky strong{color: #1e74bb;}
+    .cnt3_wrap #container_wrap .info .info_txt .hello{color:#1e74bb; }
     .hover{display: none;}
+    .controller{display: none;}
   }
   &.fall{
-    background: #9e4903;
+    background: #a3865f;
+    .cnt3_wrap .sticky strong{color: #704819;}
+    .cnt3_wrap #container_wrap .info .info_txt .hello{color: #a77133;
+      span{-webkit-text-stroke: 4px #ffcc91;}
+    }
+    .contents{overflow: visible;}
     .hover{display: none;}
+    .controller{display: none;}
+    #container_wrap{
+      height: 400vh;
+      .sticky_cnt{
+        position: sticky; position: -webkit-sticky; height: 100vh; top: 0;
+        .container{
+          @include transition(all 0.5s);
+          width: 100%; height: 100vh; position: absolute; top: 0; left: 0; opacity: 0;
+          &.on{opacity: 1; z-index: 100;}
+        }
+      }
+    }
+    
+
   }
   &.winter{
     background: #9c9c9c; color: #333;
+    .cnt3_wrap .sticky strong{color: #333;}
     .hover{display: none;}
-    .bg_deco{
-      width: 100px; height: 100px; background: url("../images/snow.png"); border-radius: 50%; position: absolute;
-      &.deco1{
-        @include transform(scale(0.9));
-        opacity: 0.2;
-        animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
-      }
-      &.deco2{          
-        @include transform(scale(0.6));
-        left: 1320px; opacity: 0.5; animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
-      }
-      &.deco3{
-        @include transform(scale(1));
-        left: 180px; opacity: 0.3; animation: moveclouds 22s linear infinite, sideWays 4s ease-in-out infinite alternate;
-      }
-      &.deco4{
-        @include transform(scale(0.75));
-        left: 1810px; opacity: 0.35; animation: moveclouds 18s linear infinite, sideWays 6s ease-in-out infinite alternate;
-      }
-      &.deco5{
-        @include transform(scale(0.8));
-        left: 350px; opacity: 0.3; animation: moveclouds 27s linear infinite, sideWays 2s ease-in-out infinite alternate;
-      }
-      &.deco6{
-        @include transform(scale(0.95));
-        left: 630px; opacity: 0.3; animation: moveclouds 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
-      }
-      &.deco7{
-        @include transform(scale(0.45));
-        left: 850px; opacity: 0.7; animation: moveclouds 20s linear infinite, sideWays 3s ease-in-out infinite alternate;
-      }
-      &.deco8{
-        @include transform(scale(0.5));
-        left: 980px; opacity: 0.5; animation: moveclouds 15s linear infinite, sideWays 6s ease-in-out infinite alternate;
-      }
-      &.deco9{
-        @include transform(scale(0.85));
-        left: 1640px; opacity: 0.8; animation: moveclouds 17s linear infinite, sideWays 4s ease-in-out infinite alternate;
-      }
-      &.deco10{
-        @include transform(scale(0.6));
-        left: 1000px; opacity: 0.9; animation: moveclouds 23s linear infinite, sideWays 2s ease-in-out infinite alternate;
-      }
-    }
+    .controller{display: none;}
     #container_wrap .wa .wa_txt .ex {
       color: rgba(3,3,3,.5);
+    }
+    .bg_deco{
+      width: 100px; height: 100px; background-image: url("../images/snow.png"); border-radius: 50%; position: absolute;
     }
     .info .deco{
       background: url("../images/santa.png") no-repeat; width: 243px; height: 500px; margin-top: 500px; animation: rotateSanta 1s cubic-bezier(0.39, 0.58, 0.57, 1) alternate-reverse infinite; position: absolute; right: 0;
@@ -511,13 +554,14 @@
         background: url("../images/tree.png") no-repeat; width: 400px; height: 591px; position: absolute; bottom: 0; right: 0px; z-index: 5; animation: treeShake 5s infinite;
       }
       .deco2{
-        background: url("../images/gift1.png") no-repeat; width: 150px; height: 150px; position: absolute; bottom: -20px; right: -100px; animation: gift 5s infinite, move 1.5s cubic-bezier(0.51, 0.11, 0.57, 1) alternate-reverse  infinite;
+        background: url("../images/gift1.png") no-repeat; width: 150px; height: 150px; position: absolute; bottom: -20px; right: -500px; animation: gift 5s infinite, move2 1.5s cubic-bezier(0.51, 0.11, 0.57, 1) alternate-reverse  infinite;
       }
       .deco3{
         content: ""; position: absolute; background: url("../images/gift2.png") no-repeat; width: 150px; height: 150px; bottom: 0; animation: rotateSanta 1s ease-in-out alternate-reverse infinite, gift 5s infinite ; right: 300px;
       }
     }
   }
+
 }
 
 // 모달창

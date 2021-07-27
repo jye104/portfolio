@@ -96,7 +96,7 @@ $(document).ready(function () {
       if ($('html, body').is(':animated')) return false;
       listNum = $(this).parent().index();
       // console.log(listNum)
-      $('html, body').stop().animate({scrollTop: cntY[listNum]}, 700, 'easeOutBack', a11y);
+      $('html, body').stop().animate({scrollTop: cntY[listNum]}, 500, 'easeOutBack', a11y);
     });
 
     // .btn_ctrl 제어(클릭)
@@ -118,7 +118,7 @@ $(document).ready(function () {
       } else if ($(this).parent().is('.btn_play')) {
         if ($('html, body').is(':animated')) return false;
         listNum = $ipodList.parent('.on').index();
-        $('html, body').stop().animate({scrollTop: cntY[listNum]}, 700, 'easeOutBack', a11y);
+        $('html, body').stop().animate({scrollTop: cntY[listNum]}, 500, 'easeOutBack', a11y);
       }
     });
         // .btn_ctrl 제어(키보드)
@@ -412,7 +412,7 @@ $(document).ready(function () {
       if($cntWrap.is(':animated')) return false;
       tgNum = $(this).parent().index();
       $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
-      $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 700, springA11y);
+      $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 500, springA11y);
     });
 
     $('#cnt3 .p_n button').on('click', function (){
@@ -423,7 +423,7 @@ $(document).ready(function () {
         btnNum === 0? tgNum-- : tgNum++;
         $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
         // console.log(tgNum);
-        $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 700, springA11y);
+        $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 500, springA11y);
       });
 
       $(document).on('keydown', function(e){
@@ -437,7 +437,7 @@ $(document).ready(function () {
         else if ((key === 13 || key === 32) && ($tg.is('.page_btn'))) tgNum = $tg.parent().index();
         
         $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
-        $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 700, springA11y);
+        $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 500, springA11y);
         // console.log(tgNum);
       });        
 
@@ -452,5 +452,16 @@ $(document).ready(function () {
       $cntWrap.find('.container').eq(tgNum).siblings().attr({'aria-hidden': true, 'inert': ''
       }).find('a, button, .tabIndex').attr('tabIndex', -1);
     }
-  });  
+  });
+  
+  // .fall .sticky
+  const winHei = $(window).height();
+  const stickyY = $('.container').offset().top;
+  $(window).on('scroll', function(){
+    const scrollY = $(this).scrollTop();
+    $('.container').each(function(idx){
+      console.log($(stickyY), $(this));
+      if (scrollY > stickyY + winHei*idx) $(this).addClass('on').siblings().removeClass('on');
+    });
+  });
 });
