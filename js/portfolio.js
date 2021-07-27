@@ -455,13 +455,13 @@ $(document).ready(function () {
   });
   
   // .fall .sticky
-  const winHei = $(window).height();
-  const stickyY = $('.container').offset().top;
-  $(window).on('scroll', function(){
-    const scrollY = $(this).scrollTop();
-    $('.container').each(function(idx){
-      console.log($(stickyY), $(this));
-      if (scrollY > stickyY + winHei*idx) $(this).addClass('on').siblings().removeClass('on');
-    });
-  });
+  // const winHei = $(window).height();
+  // const stickyY = $('.container').offset().top;
+  // $(window).on('scroll', function(){
+  //   const scrollY = $(this).scrollTop();
+  //   $('.container').each(function(idx){
+  //     console.log($(stickyY), $(this));
+  //     if (scrollY > stickyY + winHei*idx) $(this).addClass('on').siblings().removeClass('on');
+  //   });
+  // });
 });
