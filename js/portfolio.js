@@ -47,9 +47,7 @@ $(document).ready(function () {
       tabIndex: -1
     });
 
-    $ipod.siblings().attr({
-      'aria-hidden': true, inert: ''
-    });
+    $ipod.siblings().attr({'aria-hidden': true, inert: ''});
 
     // #dim 동적생성
     $ipodBtn.before('<div id="dim"></div>');
@@ -101,7 +99,7 @@ $(document).ready(function () {
       $('html, body').stop().animate({scrollTop: cntY[listNum]}, 700, 'easeOutBack', a11y);
     });
 
-    // .btn_ctrl 제어
+    // .btn_ctrl 제어(클릭)
     $ctrlBtn.on('click', function () {
       if ($(this).parent().is('.btn_left')) {
         if ($ipodList.parent('.on').children().is('.first')) {
@@ -123,14 +121,15 @@ $(document).ready(function () {
         $('html, body').stop().animate({scrollTop: cntY[listNum]}, 700, 'easeOutBack', a11y);
       }
     });
+        // .btn_ctrl 제어(키보드)
+    $(document).on('keydown', function(e){
+      if ($('html, body').is(':animated')) return false;
+      const key = e.keycode;
+      const $tg = $(e.target);
+      console.log(key, $tg);
+      if ((key === 37) && ($tg.is('.btn_ctrl button'))) $('.btn_left').click();
 
-    // $ipod.on('keydown', function(e){
-    //   if ($('html, body').is(':animated')) return false;
-    //   const key = e.keycode;
-    //   const $tg = $(e.target);
-    //   console.log(key, $tg);
-    //   if((key === 37)) $('.btn_left').click();
-    // });
+    });
 
     // 접근성 추가
   });
@@ -396,4 +395,62 @@ $(document).ready(function () {
     }
   });
 
+  // .spring slider
+  $('#cnt3').find('.sticky_btn button').on('click', function(){
+    const $cntWrap = $('#container_wrap');
+    const $pageLi = $('.pagination li');
+    const cntTotal = $('#cnt3 .container').length;
+    const maxStep = cntTotal - 1;
+    let winWid = $(window).width();
+    let tgNum = 0;
+  
+    //console.log($cntWrap, cntTotal);
+  if ($(this).is('.spring')){
+    $pageLi.eq(tgNum).addClass('on');
+    $cntWrap.css({width: cntTotal * winWid}).attr({'aria-live': 'polite'});
+    $pageLi.children().on('click', function(){
+      if($cntWrap.is(':animated')) return false;
+      tgNum = $(this).parent().index();
+      $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
+      $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 700, springA11y);
+    });
+
+    $('#cnt3 .p_n button').on('click', function (){
+        const btnNum = $(this).index();
+        if ($cntWrap.is(':animated')) return false;
+        if(btnNum === 0 && tgNum === 0) return false;
+        else if(btnNum === 1 && tgNum === maxStep) return false; 
+        btnNum === 0? tgNum-- : tgNum++;
+        $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
+        // console.log(tgNum);
+        $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 700, springA11y);
+      });
+
+      $(document).on('keydown', function(e){
+        if ($cntWrap.is(':animated')) return false;
+        const key = e.keyCode;
+        const $tg = $(e.target);
+        console.log(key);
+        if ((key == 37) && tgNum > 0) tgNum--; // 왼쪽방향키
+        else if ((key === 39) && tgNum < cntTotal-1) tgNum++; //  오른쪽 방향키
+        else if ((key === 13 || key === 32) && ($tg.is('.p_n button'))) tgNum = $tg.index();
+        else if ((key === 13 || key === 32) && ($tg.is('.page_btn'))) tgNum = $tg.parent().index();
+        
+        $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
+        $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 700, springA11y);
+        // console.log(tgNum);
+      });        
+
+  } else {
+    $cntWrap.removeAttr('style').attr({'aria-live': 'off'});
+    }
+    function springA11y() {
+      // 현재 본문
+      $cntWrap.find('.container').eq(tgNum).removeAttr('aria-hidden inert').find('a, button').removeAttr('tabIndex');
+      $cntWrap.find('.container').eq(tgNum).find('.tabIndex').attr('tabIndex', 0)
+      // 나머지 본문들
+      $cntWrap.find('.container').eq(tgNum).siblings().attr({'aria-hidden': true, 'inert': ''
+      }).find('a, button, .tabIndex').attr('tabIndex', -1);
+    }
+  });  
 });

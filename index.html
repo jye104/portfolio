@@ -8,6 +8,7 @@
   <title> 정예은 웹퍼블리셔 포트폴리오 </title>
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:regular,700,900" rel="stylesheet">
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/keyframes.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="apple-touch-icon" href="images/favicon/apple-icon-180x180.png">
   <link rel="shortcut icon" href="images/favicon/android-icon-192x192.png">
@@ -99,6 +100,7 @@
         <div class="portfolio_ss">
           <div class="sticky_wrap">
             <div class="intro_sulwhasoo fade">
+              <span class="scroll_down">Scroll<br>Down</span>
               <div class="txt_sulwhasoo main_tit fade_right">
                 <strong>01</strong>
                 <h2>Sulwhasoo</h2>
@@ -115,8 +117,7 @@
               <div class="computer fade">
                 <div class="monitor fade_left">
                   <img src="images/monitor1000.png" alt="컴퓨터 모니터">
-                  <div class="monitor_wrap"><img src="images/sulwhasoo_brand_story.jpg" alt="모니터 속에 보이는 설화수 브랜드스토리 페이지"
-                      class="up_img"></div>
+                  <div class="monitor_wrap"><img src="images/sulwhasoo_brand_story.jpg" alt="모니터 속에 보이는 설화수 브랜드스토리 페이지" class="up_img"></div>
                 </div>
               </div>
               <div class="brand_txt sub_tit">
@@ -201,7 +202,6 @@
             <div class="sticky_btn">
               <button type="button" class="normal" title="기본 화면으로 보기">
                 <img src="images/wink.png" alt="윙크하고 있는 아이콘">
-                <span class="blind"></span>
               </button>
               <button type="button" class="spring" title="봄 느낌의 화면으로 보기">
                 <!-- 봄 : 꽃잎 -->
@@ -210,29 +210,72 @@
               <button type="button" class="summer" title="여름 느낌의 화면으로 보기">
                 <!-- 여름 : 물방울, 물결 -->
                 <img src="images/summer.png" alt="물방울 아이콘">
-                <span class="blind"></span>
               </button>
               <button type="button" class="fall" title="가을 느낌의 화면으로 보기">
                 <!-- 가을 : 나뭇잎, 단풍 -->
                 <img src="images/fall.png" alt="나뭇잎 아이콘">
-                <span class="blind"></span>
               </button>
               <button type="button" class="winter" title="겨울 느낌의 화면으로 보기">
                 <!-- 겨울 : 눈보라 눈사람 -->
                 <img src="images/winter.png" alt="눈오는 구름 아이콘">
-                <span class="blind"></span>
               </button>
             </div>
           </div>
           <div class="contents">
+            <div class="decoration">
+              <div class="bg_deco deco1"></div>
+              <div class="bg_deco deco2"></div>
+              <div class="bg_deco deco3"></div>
+              <div class="bg_deco deco4"></div>
+              <div class="bg_deco deco5"></div>
+              <div class="bg_deco deco6"></div>
+              <div class="bg_deco deco7"></div>
+              <div class="bg_deco deco8"></div>
+              <div class="bg_deco deco9"></div>
+              <div class="bg_deco deco10"></div>
+            </div>
             <div class="about_tit fade">
               <h2 class="fade_right">나는 누구일까요?</h2>
               <img src="images/about.png" alt="정예은 카카오 이모지" class="fade_right">
             </div>
+            <div class="controller">
+              <div class="p_n">
+                <button type="button" id="prev" >prev</button>
+                <button type="button" id="next" >next</button>
+              </div>
+              <div class="pagination">
+                <ul>
+                  <li>
+                    <button type="button" class="page_btn">
+                      <span class="txt">About me</span>
+                      <span class="icon"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="page_btn">
+                      <span class="txt">Accessibility</span>
+                      <span class="icon"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="page_btn">
+                      <span class="txt">Skill</span>
+                      <span class="icon"></span>
+                    </button>
+                  </li>
+                  <li>
+                    <button type="button" class="page_btn">
+                      <span class="txt">Contact</span>
+                      <span class="icon"></span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div id="container_wrap">
               <div class="container info">
                 <div class="photo_hover">
-                  <img src="images/hover.png" alt="hover" class="hover">
+                  <img src="images/hover.png" alt="손가락 모양" class="hover">
                   <div class="front"><img src="images/about_img.jpg" alt=""></div>
                   <div class="back"><img src="images/about_img2.jpg" alt=""></div>
                 </div>
@@ -248,11 +291,10 @@
                 <div class="wa_txt">
                   <p><strong>웹표준 및 웹접근성</strong>을 지키기 위해 노력합니다. 제가 만든<br> 사이트는 장애인이든 비장애인이든, 누구나 <strong>제약없이</strong>
                     <br>이용하도록 접근성을 지킨 마크업을 하도록 노력합니다.</p>
-                  <p class="ex"> ex) tab, modal, slider 등의 aria, 또는 form 태그의 label 등
-                  </p>
+                  <p class="ex"> ex) tab, modal, slider 등의 aria, 또는 form 태그의 label 등</p>                  
                 </div>
                 <div class="photo_hover">
-                  <img src="images/hover2.png" alt="hover" class="hover">
+                  <img src="images/hover2.png" alt="손가락 모양" class="hover">
                   <div class="front">
                     <img src="images/withwine_w3c.jpg" alt="위드와인 페이지 w3c에서 마크업,css 준수 인증 받은 화면">
                   </div>
@@ -260,6 +302,7 @@
                     <img src="images/markup.jpg" alt="form태그의 접근성을 준수한 마크업 화면, tab contents에 aria로 접근성을 준수한 마크업 화면">
                   </div>
                 </div>
+                <div class="deco"></div>
               </div>
               <div class="container skill">
                 <div class="skill_txt">
@@ -279,6 +322,8 @@
                   <li><img src="images/github.png" alt=""><span>Github</span></li>
                 </ul>
                 <div class="deco"></div>
+                <div class="deco2"></div>
+                <div class="deco3"></div>
               </div>
               <div class="container contact">
                 <div class="contact_txt">
@@ -288,7 +333,7 @@
                   <p><img src="images/github.png" alt="github">https://github.com/jye104</p>
                   <p class="stress">항상 배움의 자세로 임하겠습니다.<br> 언제든 연락주세요!</p>
                 </div>
-                <img src="images/about_img3.jpg" alt="">
+                <img src="images/about_img3.jpg" alt="거울에서 찍은 정예은 사진">
               </div>
             </div>
           </div>

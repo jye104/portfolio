@@ -185,6 +185,19 @@
       @include transition(all 0.8s);
       height: 100vh; 
       position: sticky; top: 0; overflow: hidden;
+      .scroll_down{
+        position: absolute; left: 50%; bottom: 30px;
+        display: block; border: 1px solid #fff; width: 40px; height: 65px; font-size: 11px; text-align: center; border-radius: 30px; padding-top: 10px; font-weight: 300;
+        &::before{
+          content: ""; position: absolute;background: #fff; width: 1px; height: 30px; bottom: -20px; left: 50%; margin-left: -0.5px; animation: scrollDown 0.6s alternate-reverse infinite;
+        
+        }
+        &::after{
+          @include transform(rotate(45deg));
+          content: ""; position: absolute;  width: 10px; height: 10px; border: 1px solid #fff; border-left: none; border-top: none; bottom: -20px; left: 50%; margin-left: -5.5px; animation: scrollDown 0.6s alternate-reverse infinite;
+        }
+      }
+
       .txt_sulwhasoo{
         position: relative;
         strong{color: #fcb95e; opacity: 0.1; font-size: 100px; position: absolute; top: -87px;left: -46px; font-weight: 300;}
@@ -305,14 +318,15 @@
     @include flex;
     @include justify-content;
     @include flex-direction;
-    padding: 50px 70px 0 50px; width: 100%;
-    #contents{width: 100%;}
+    width: 100%; position: relative;
+    .controller{display: none;}
+    .contents{width: 100%; position: relative; overflow: hidden;}
   }
   .sticky{
     @include flex;
     @include flex-direction;
     @include align-items(flex-start);
-    position: sticky; -webkit-position: -webkit-stacky; height: 100px; top: 20px;box-sizing: border-box; z-index: 100; margin-left: 20px;
+    position: sticky; -webkit-position: -webkit-stacky; height: 100px;  width: 15%; top: 20px; box-sizing: border-box; z-index: 100; margin-left: 20px;
     strong{display: block; font-size: 20px; color: #ffff80; padding-bottom: 10px;}
   }
   .sticky_btn{    
@@ -334,7 +348,7 @@
     @include flex;
     @include justify-content(flex-start);
     @include align-items;
-    height: 100vh;
+    height: 100vh; padding: 50px 70px 0 50px; 
     h3, img, p, span{
       @include transition(all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94));
       opacity: 0;
@@ -390,6 +404,7 @@
   }
   #container_wrap .wa{
     @include justify-content(flex-end);
+    overflow: hidden;
     .wa_txt{
       font-size: 23px; padding-right: 20px; text-align: right;
       .ex{font-size: 18px; color: #8d8d8d;}
@@ -410,7 +425,7 @@
         @include align-items(flex-end);
         line-height: 1;
         font-size: 75px;
-        img{animation: rotate 1s alternate-reverse infinite;}
+        img{animation: rotateThumb 1s alternate-reverse infinite;}
       }
       p{font-size: 20px; text-align: center; padding-top: 35px;}
     }
@@ -434,18 +449,94 @@
       }
     }
   }
+  .decoration{
+    width: 100%; height: 100%; overflow: hidden;
+  }
   &.spring{
-    background: #ffdee4; color: #333;
+    background: #ffeaee; color: #333;
+    .bg_deco{
+      width: 100px; height: 100px; background-image: url("../images/flower_one.png"); position: absolute;
+    }
+    #container_wrap{
+      @include flex;
+      height: 95vh; overflow: hidden;
+      .container{height: 95vh; width: 100%;}
+    }
+    .hover{display: none;}
+    .controller{
+      display: block;
+      #prev, #next{
+        position: absolute; top:450px; width: 80px; height: 70px; background: rgba(255, 34, 34, 0.3); color: #fff; transform: translateY(-50%); border-radius: 30px; 
+      }
+      #prev{left: 35%}
+      #next{right: 35%;}
+    }
+  }
+  .pagination{
+    @include translateX-50;
+    position: absolute; top: 415px; left: 50%; font-size: 20px; line-height: 70px; width: 200px; height: 70px; text-align: center;
+    ul{      
+      @include flex;
+      @include justify-content(space-around);
+      li{
+        .txt{
+          @include translateX-50;
+          position: absolute; top: 0; left: 50%; opacity: 0;
+        }
+        .icon{
+          display: block; position: relative; width: 25px; height: 25px; border: 2px solid #ff8787; margin-top: 35px; border-radius: 50%;
+          &:after{
+            content: ""; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: #ff8787; top: 0;left: 0;}
+        }
+        &.on{
+          .txt{opacity: 1;}
+          .icon::after{
+            @include transform(scale(0.5));
+          }
+        }
+      }
+    }
   }
   &.summer{
     background: #b1e9ff; color: #333;
+    .hover{display: none;}
+    .controller{display: none;}
   }
   &.fall{
     background: #9e4903;
+    .hover{display: none;}
+    .controller{display: none;}
+
   }
   &.winter{
-    background: #eee; color: #333;
+    background: #9c9c9c; color: #333;
+    .hover{display: none;}
+    .controller{display: none;}
+    #container_wrap .wa .wa_txt .ex {
+      color: rgba(3,3,3,.5);
+    }
+    .bg_deco{
+      width: 100px; height: 100px; background-image: url("../images/snow.png"); border-radius: 50%; position: absolute;
+    }
+    .info .deco{
+      background: url("../images/santa.png") no-repeat; width: 243px; height: 500px; margin-top: 500px; animation: rotateSanta 1s cubic-bezier(0.39, 0.58, 0.57, 1) alternate-reverse infinite; position: absolute; right: 0;
+    }
+    .wa .deco{
+      background: url("../images/snowman_ski.png") no-repeat; width: 500px; height: 500px; position: absolute; left: 0; animation: santaSki 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+    .skill{ position: relative;
+      .deco{
+        background: url("../images/tree.png") no-repeat; width: 400px; height: 591px; position: absolute; bottom: 0; right: 0px; z-index: 5; animation: treeShake 5s infinite;
+      }
+      .deco2{
+        background: url("../images/gift1.png") no-repeat; width: 150px; height: 150px; position: absolute; bottom: -20px; right: -100px; animation: gift 5s infinite, move 1.5s cubic-bezier(0.51, 0.11, 0.57, 1) alternate-reverse  infinite;
+      }
+      .deco3{
+        content: ""; position: absolute; background: url("../images/gift2.png") no-repeat; width: 150px; height: 150px; bottom: 0; animation: rotateSanta 1s ease-in-out alternate-reverse infinite, gift 5s infinite ; right: 300px;
+      }
+    }
   }
+
 }
 
 // 모달창
