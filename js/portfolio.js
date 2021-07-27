@@ -406,7 +406,7 @@ $(document).ready(function () {
   
     //console.log($cntWrap, cntTotal);
   if ($(this).is('.spring')){
-    $pageLi.eq(tgNum).addClass('on');
+    $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
     $cntWrap.css({width: cntTotal * winWid}).attr({'aria-live': 'polite'});
     $pageLi.children().on('click', function(){
       if($cntWrap.is(':animated')) return false;
@@ -454,14 +454,19 @@ $(document).ready(function () {
     }
   });
   
-  // .fall .sticky
-  // const winHei = $(window).height();
-  // const stickyY = $('.container').offset().top;
-  // $(window).on('scroll', function(){
-  //   const scrollY = $(this).scrollTop();
-  //   $('.container').each(function(idx){
-  //     console.log($(stickyY), $(this));
-  //     if (scrollY > stickyY + winHei*idx) $(this).addClass('on').siblings().removeClass('on');
-  //   });
-  // });
+  //.fall .sticky
+  $('#cnt3').find('.sticky_btn button').on('click', function(){
+    const winHei = $(window).height();
+    const stickyY = $('#container_wrap').offset().top;
+    if ($(this).is('.fall')){
+    //console.log(stickyY);
+     $(window).on('scroll', function(){
+       const scrollY = $(this).scrollTop();
+       $('#container_wrap > div').each(function(idx, ele){
+         console.log(idx);
+         if (scrollY > stickyY + winHei*idx) {$(this).addClass('on').siblings().removeClass('on');}
+        });
+     });
+    }
+  });
 });

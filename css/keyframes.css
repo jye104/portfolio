@@ -129,7 +129,7 @@
   0% {
     top: 0; }
   100% {
-    top: 100vh; } }
+    top: 130vh; } }
 @keyframes sideWays {
   0% {
     margin-left: 0px; }
@@ -196,5 +196,14 @@
   100% {
     bottom: -300px;
     opacity: 0; } }
+@keyframes drift {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  from {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=keyframes.css.map */

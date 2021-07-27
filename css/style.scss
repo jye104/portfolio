@@ -460,7 +460,7 @@
       span{-webkit-text-stroke: 4px #ec8787; }
     }
     .bg_deco{
-      width: 100px; height: 100px; background-image: url("../images/flower_one.png"); position: absolute;
+      width: 100px; height: 100px; background-image: url("../images/flower_one.png"); 
     }
     #container_wrap{
       @include flex;
@@ -508,20 +508,53 @@
     .cnt3_wrap #container_wrap .info .info_txt .hello{color:#1e74bb; }
     .hover{display: none;}
     .controller{display: none;}
+    .bg_deco{
+      @include transform(skew(180deg));
+      width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.6); background: rgba(30, 116, 187, 0.2);
+    }
+    .container{position: relative;}
+    .deco{
+      opacity: .4; content: ""; position: absolute; top: 3%; left: 85%; background: #0af; width: 500px; height: 500px; margin-left: -250px; margin-top: -250px; transform-origin: 50% 48%; border-radius: 43%; animation: drift 3000ms infinite linear;
+    }
+    .info .contact{
+      
+    }
+    .wa .deco{
+
+    }
+    .contact .deco{
+
+    }
   }
   &.fall{
-    background: #a3865f;
-    .cnt3_wrap .sticky strong{color: #704819;}
+    background: #b8a080;
+    .cnt3_wrap .sticky strong{color: #6b4315;}
     .cnt3_wrap #container_wrap .info .info_txt .hello{color: #a77133;
-      span{-webkit-text-stroke: 4px #ffcc91;}
+      span{-webkit-text-stroke: 4px #6b4315;}
+    }
+    .bg_deco{
+      width: 150px; height: 150px;
+      &.deco1{background-image: url("../images/leaf1.png");}
+      &.deco2{background-image: url("../images/leaf2.png");}
+      &.deco3{background-image: url("../images/leaf3.png");}
+      &.deco4{background-image: url("../images/leaf4.png");}
+      &.deco5{background-image: url("../images/leaf5.png");}
+      &.deco6{background-image: url("../images/leaf6.png");}
+      &.deco7{background-image: url("../images/leaf7.png");}
+      &.deco8{background-image: url("../images/leaf3.png");}
+      &.deco9{background-image: url("../images/leaf7.png");}
+      &.deco10{background-image: url("../images/leaf1.png");}
+    }
+    #container_wrap .wa .wa_txt .ex {
+      color: rgba(253, 246, 214, 0.5);
     }
     .contents{overflow: visible;}
     .hover{display: none;}
     .controller{display: none;}
-    #container_wrap{
-      height: 400vh;
-      .sticky_cnt{
-        position: sticky; position: -webkit-sticky; height: 100vh; top: 0;
+    .sticky_cnt{
+      height: 500vh;
+      #container_wrap{
+        position: sticky; position: -webkit-sticky; height: 100vh; top: 0; overflow: hidden;
         .container{
           @include transition(all 0.5s);
           width: 100%; height: 100vh; position: absolute; top: 0; left: 0; opacity: 0;
@@ -529,8 +562,6 @@
         }
       }
     }
-    
-
   }
   &.winter{
     background: #9c9c9c; color: #333;
@@ -541,7 +572,7 @@
       color: rgba(3,3,3,.5);
     }
     .bg_deco{
-      width: 100px; height: 100px; background-image: url("../images/snow.png"); border-radius: 50%; position: absolute;
+      width: 100px; height: 100px; background-image: url("../images/snow.png"); 
     }
     .info .deco{
       background: url("../images/santa.png") no-repeat; width: 243px; height: 500px; margin-top: 500px; animation: rotateSanta 1s cubic-bezier(0.39, 0.58, 0.57, 1) alternate-reverse infinite; position: absolute; right: 0;

@@ -976,8 +976,7 @@
     #cnt3.spring .bg_deco {
       width: 100px;
       height: 100px;
-      background-image: url("../images/flower_one.png");
-      position: absolute; }
+      background-image: url("../images/flower_one.png"); }
     #cnt3.spring #container_wrap {
       display: -webkit-box;
       display: -moz-box;
@@ -1072,28 +1071,79 @@
       display: none; }
     #cnt3.summer .controller {
       display: none; }
+    #cnt3.summer .bg_deco {
+      -webkit-transform: skew(180deg);
+      -moz-transform: skew(180deg);
+      transform: skew(180deg);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      background: rgba(30, 116, 187, 0.2); }
+    #cnt3.summer .container {
+      position: relative; }
+    #cnt3.summer .deco {
+      opacity: .4;
+      content: "";
+      position: absolute;
+      top: 3%;
+      left: 85%;
+      background: #0af;
+      width: 500px;
+      height: 500px;
+      margin-left: -250px;
+      margin-top: -250px;
+      transform-origin: 50% 48%;
+      border-radius: 43%;
+      animation: drift 3000ms infinite linear; }
   #cnt3.fall {
-    background: #a3865f; }
+    background: #b8a080; }
     #cnt3.fall .cnt3_wrap .sticky strong {
-      color: #704819; }
+      color: #6b4315; }
     #cnt3.fall .cnt3_wrap #container_wrap .info .info_txt .hello {
       color: #a77133; }
       #cnt3.fall .cnt3_wrap #container_wrap .info .info_txt .hello span {
-        -webkit-text-stroke: 4px #ffcc91; }
+        -webkit-text-stroke: 4px #6b4315; }
+    #cnt3.fall .bg_deco {
+      width: 150px;
+      height: 150px; }
+      #cnt3.fall .bg_deco.deco1 {
+        background-image: url("../images/leaf1.png"); }
+      #cnt3.fall .bg_deco.deco2 {
+        background-image: url("../images/leaf2.png"); }
+      #cnt3.fall .bg_deco.deco3 {
+        background-image: url("../images/leaf3.png"); }
+      #cnt3.fall .bg_deco.deco4 {
+        background-image: url("../images/leaf4.png"); }
+      #cnt3.fall .bg_deco.deco5 {
+        background-image: url("../images/leaf5.png"); }
+      #cnt3.fall .bg_deco.deco6 {
+        background-image: url("../images/leaf6.png"); }
+      #cnt3.fall .bg_deco.deco7 {
+        background-image: url("../images/leaf7.png"); }
+      #cnt3.fall .bg_deco.deco8 {
+        background-image: url("../images/leaf3.png"); }
+      #cnt3.fall .bg_deco.deco9 {
+        background-image: url("../images/leaf7.png"); }
+      #cnt3.fall .bg_deco.deco10 {
+        background-image: url("../images/leaf1.png"); }
+    #cnt3.fall #container_wrap .wa .wa_txt .ex {
+      color: rgba(253, 246, 214, 0.5); }
     #cnt3.fall .contents {
       overflow: visible; }
     #cnt3.fall .hover {
       display: none; }
     #cnt3.fall .controller {
       display: none; }
-    #cnt3.fall #container_wrap {
-      height: 400vh; }
-      #cnt3.fall #container_wrap .sticky_cnt {
+    #cnt3.fall .sticky_cnt {
+      height: 500vh; }
+      #cnt3.fall .sticky_cnt #container_wrap {
         position: sticky;
         position: -webkit-sticky;
         height: 100vh;
-        top: 0; }
-        #cnt3.fall #container_wrap .sticky_cnt .container {
+        top: 0;
+        overflow: hidden; }
+        #cnt3.fall .sticky_cnt #container_wrap .container {
           -webkit-transition: all 0.5s;
           -moz-transition: all 0.5s;
           -o-transition: all 0.5s;
@@ -1104,7 +1154,7 @@
           top: 0;
           left: 0;
           opacity: 0; }
-          #cnt3.fall #container_wrap .sticky_cnt .container.on {
+          #cnt3.fall .sticky_cnt #container_wrap .container.on {
             opacity: 1;
             z-index: 100; }
   #cnt3.winter {
@@ -1121,9 +1171,7 @@
     #cnt3.winter .bg_deco {
       width: 100px;
       height: 100px;
-      background-image: url("../images/snow.png");
-      border-radius: 50%;
-      position: absolute; }
+      background-image: url("../images/snow.png"); }
     #cnt3.winter .info .deco {
       background: url("../images/santa.png") no-repeat;
       width: 243px;

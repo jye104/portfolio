@@ -96,7 +96,7 @@
 }
 @keyframes moveclouds2 { 
   0%{top: 0;}
-  100%{top: 100vh;}
+  100%{top: 130vh;}
 }
 @keyframes sideWays { 
   0%{margin-left:0px;}
@@ -148,5 +148,13 @@
   }
   100%{
     bottom: -300px; opacity: 0;
+  }
+}
+@keyframes drift {
+  from {
+    @include transform(rotate(0deg));
+  }
+  from {
+    @include transform(rotate(360deg));
   }
 }

@@ -144,6 +144,7 @@ section, figure{display: block;}
   @include transition-delay(0.3s);
 }
 .winter .bg_deco{
+  background: no-repeat center / cover; position: absolute;
   &.deco1{
     @include transform(scale(0.9));
     opacity: 0.2; background: no-repeat center / cover;
@@ -186,15 +187,15 @@ section, figure{display: block;}
     left: 1000px; opacity: 0.9; animation: moveclouds 23s linear infinite, sideWays 2s ease-in-out infinite alternate;
   }
 }
-.spring .bg_deco{
-  background: no-repeat center / cover;
+.spring .bg_deco, .fall .bg_deco, .summer .bg_deco{
+  background: no-repeat center / cover; position: absolute;
   &.deco1{
     @include transform(scale(0.9));
     opacity: 0.2; background: no-repeat center / cover;
     animation: moveclouds 22s linear infinite, sideWays2 4s ease-in-out infinite alternate;
   }
   &.deco2{          
-    @include transform(scale(0.92));
+    @include transform(scale(0.62));
     left: 1320px; opacity: 0.5; animation: moveclouds2 25s linear infinite, sideWays2 5s ease-in-out infinite alternate;
   }
   &.deco3{
@@ -203,7 +204,7 @@ section, figure{display: block;}
   }
   &.deco4{
     @include transform(scale(0.75) rotate(10deg));
-    left: 1810px; opacity: 0.35; animation: moveclouds2 17s linear infinite, sideWays2 6s ease-in-out infinite alternate;
+    left: 1210px; opacity: 0.35; animation: moveclouds2 18s linear infinite, sideWays2 6s ease-in-out infinite alternate;
   }
   &.deco5{
     @include transform(scale(0.8) rotate(70deg));
@@ -223,7 +224,7 @@ section, figure{display: block;}
   }
   &.deco9{
     @include transform(scale(0.85));
-    left: 1640px; opacity: 0.8; animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate;
+    left: 1440px; opacity: 0.8; animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate;
   }
   &.deco10{
     @include transform(scale(0.6) rotate(350deg));
