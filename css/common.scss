@@ -69,6 +69,7 @@ section, figure{display: block;}
 .blind{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
 .opacity{opacity: 0 !important;}
 .visible{opacity: 1 !important; visibility: visible !important;}
+.white{color: #fff;}
 .main_tit{
   h2{
     font-size: 70px; color: transparent; line-height: 1; font-weight: 900; text-align: center;
@@ -119,7 +120,6 @@ section, figure{display: block;}
     @include transform(rotateY(0deg));
   }
 } 
-
 /* fade 효과 */
 .fade .fade_up, .fade .fade_down, .fade .fade_right, .fade .fade_left{
   @include transition(all 0.8s);
@@ -144,143 +144,132 @@ section, figure{display: block;}
 .delay-3{
   @include transition-delay(0.3s);
 }
+.winter .bg_deco{
+  background: no-repeat center / cover; position: absolute;
+  &.deco1{
+    @include transform(scale(0.9));
+    opacity: 0.2; background: no-repeat center / cover;
+    animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  }
+  &.deco2{          
+    @include transform(scale(0.6));
+    left: 1320px; opacity: 0.5; animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+  }
+  &.deco3{
+    @include transform(scale(1));
+    left: 180px; opacity: 0.3; animation: moveclouds 22s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  }
+  &.deco4{
+    @include transform(scale(0.75));
+    left: 1810px; opacity: 0.35; animation: moveclouds 18s linear infinite, sideWays 6s ease-in-out infinite alternate;
+  }
+  &.deco5{
+    @include transform(scale(0.8));
+    left: 350px; opacity: 0.3; animation: moveclouds 27s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  }
+  &.deco6{
+    @include transform(scale(0.95));
+    left: 630px; opacity: 0.3; animation: moveclouds 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  }
+  &.deco7{
+    @include transform(scale(0.45));
+    left: 850px; opacity: 0.7; animation: moveclouds 20s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  }
+  &.deco8{
+    @include transform(scale(0.5));
+    left: 980px; opacity: 0.5; animation: moveclouds 15s linear infinite, sideWays 6s ease-in-out infinite alternate;
+  }
+  &.deco9{
+    @include transform(scale(0.85));
+    left: 1640px; opacity: 0.8; animation: moveclouds 17s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  }
+  &.deco10{
+    @include transform(scale(0.6));
+    left: 1000px; opacity: 0.9; animation: moveclouds 23s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  }
+}
+.summer .bg_deco{
+  position: absolute; background: rgb(84, 175, 221); width: 150px; height: 150px; transform-origin: 50% 48%; border-radius: 43%;/*  animation: , drift 3000ms infinite linear; */
+
+  &.deco1{
+    opacity: 0.2; background: no-repeat center / cover; left: 0;
+    animation: moveclouds 22s linear infinite, sideWays2 4s ease-in-out infinite alternate;
+  }
+  &.deco2{    
+    left: 1320px; opacity: 0.5; animation: moveclouds2 25s linear infinite, sideWays2 5s ease-in-out infinite alternate, drift 3000ms infinite linear; width: 50px; height: 50px;
+  }
+  &.deco3{
+    left: 180px; opacity: 0.3; animation: moveclouds2 20s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
+    width: 60px; height: 60px;
+  }
+  &.deco4{    
+    left: 1210px; opacity: 0.35; animation: moveclouds2 18s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco5{
+    left: 350px; opacity: 0.3; animation: moveclouds2 28s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco6{    
+    left: 630px; opacity: 0.3; animation: moveclouds2 13s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco7{    
+    left: 850px; opacity: 0.7; animation: moveclouds2 20s linear infinite, sideWays2 3s ease-in-out infinite alternate, drift 3000ms infinite linear; width: 70px; height: 70px;
+  }
+  &.deco8{
+    left: 80px; opacity: 0.5; animation: moveclouds2 15s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco9{    
+    left: 1540px; opacity: 0.8; animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco10{
+    left: 1000px; opacity: 0.9; animation: moveclouds2 23s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear; width: 80px; height: 80px;
+  }
+}
+.spring .bg_deco, .fall .bg_deco{
+  background: no-repeat center / cover; position: absolute;
+  &.deco1{
+    @include transform(scale(0.9));
+    opacity: 0.2; background: no-repeat center / cover;
+    animation: moveclouds 22s linear infinite, sideWays2 4s ease-in-out infinite alternate;
+  }
+  &.deco2{          
+    @include transform(scale(0.62));
+    left: 1320px; opacity: 0.5; animation: moveclouds2 25s linear infinite, sideWays2 5s ease-in-out infinite alternate;
+  }
+  &.deco3{
+    @include transform(scale(1));
+    left: 180px; opacity: 0.3; animation: moveclouds2 20s linear infinite, sideWays2 4s ease-in-out infinite alternate;
+  }
+  &.deco4{
+    @include transform(scale(0.75) rotate(10deg));
+    left: 1210px; opacity: 0.35; animation: moveclouds2 18s linear infinite, sideWays2 6s ease-in-out infinite alternate;
+  }
+  &.deco5{
+    @include transform(scale(0.8) rotate(70deg));
+    left: 350px; opacity: 0.3; animation: moveclouds2 28s linear infinite, sideWays2 2s ease-in-out infinite alternate;
+  }
+  &.deco6{
+    @include transform(scale(0.95) rotate(-45deg));
+    left: 630px; opacity: 0.3; animation: moveclouds2 13s linear infinite, sideWays2 4s ease-in-out infinite alternate;
+  }
+  &.deco7{
+    @include transform(scale(0.86) rotate(45deg));
+    left: 850px; opacity: 0.7; animation: moveclouds2 20s linear infinite, sideWays2 3s ease-in-out infinite alternate;
+  }
+  &.deco8{
+    @include transform(scale(0.5));
+    left: 980px; opacity: 0.5; animation: moveclouds2 15s linear infinite, sideWays2 6s ease-in-out infinite alternate;
+  }
+  &.deco9{
+    @include transform(scale(0.85));
+    left: 1440px; opacity: 0.8; animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate;
+  }
+  &.deco10{
+    @include transform(scale(0.6) rotate(350deg));
+    left: 1000px; opacity: 0.9; animation: moveclouds2 23s linear infinite, sideWays2 2s ease-in-out infinite alternate;
+  }
+}
 
 body{font-family: NotoSansKR; font-size: 16px; font-weight: 400; color: #eee; background: #333; word-break: keep-all; /* overflow-x: hidden; */}
 *{box-sizing: border-box;}
 body.overflowy{overflow-y: hidden;}
 body.overflowX{overflow-X: hidden;}
-
-/* keyframe */
-@keyframes blink {
-  0%{border-color: transparent;}
-  50%{border-color: #fff}
-  100%{border-color: transparent;}
-}
-@keyframes typing {
-  0%{width: 0%; opacity: 1;}
-  40%{width: 100%; opacity: 1;}
-  100%{width: 100%; opacity: 1;}
-//   90%{width: 0%}
-//   100%{width: 0%;}
-}
-@keyframes opacity {
-  0%{opacity: 0;}
-  100%{opacity: 1;}
-}
-@keyframes leftMove {
-  0%{margin-left: 100%;}
-  100%{margin-left: -50%;}
-}
-@keyframes rightMove {
-  0%{margin-right: 100%;}
-  100%{margin-right: -50%;}
-}
-@keyframes circle {
-  0%{opacity: 1; transform: scale(1);}
-  100%{opacity: 0; transform: scale(1.7);}
-}
-@keyframes arrow {
-  0%{opacity: 0.5;}
-  100%{opacity: 1;}
-}
-@keyframes square {
-  0%{stroke-width: 10; stroke-dasharray: 80 500; stroke-dashoffset: -420; stroke: #fcb95e;}
-  100%{stroke-width: 7; stroke-dasharray: 420; stroke-dashoffset: 0; stroke: #f57e3c;}
-}
-@keyframes square2 {
-  0%{stroke-width: 10; stroke-dasharray: 80 500; stroke-dashoffset: -420; stroke: #ffdcdc;}
-  100%{stroke-width: 7; stroke-dasharray: 420; stroke-dashoffset: 0; stroke: #ec8787;}
-}
-@keyframes stress {
-  0%{
-    @include transform(scale(1));
-  }
-  100%{
-    @include transform(scale(1.1));
-  }
-}
-@keyframes hover {
-  0%{
-    @include transform(translate(-30px, -30px));
-  }
-  100%{
-    @include transform(translate(0, 0));
-  }
-}
-@keyframes hover2 {
-  0%{
-    @include transform(translateY(-15px));
-  }
-  100%{
-    @include transform(translateY(0));
-  }
-}
-@keyframes rotateThumb {
-  0%{
-    @include transform(rotate(-10deg));
-  }
-  50%{
-    @include transform(rotate(0deg));
-  }
-  100%{
-    @include transform(rotate(0deg));
-  }
-}
-@keyframes rotateSanta {
-  0%{
-    @include transform(rotate(-5deg));
-    transform-origin: bottom;
-  }
-  100%{
-    @include transform(rotate(0deg));
-    transform-origin: bottom;
-  }
-}
-@keyframes moveclouds { 
-  0%{top: 0;}
-  100%{top: 4169px;}
-}
-@keyframes sideWays { 
-  0%{margin-left:0px;}
-  100%{margin-left:100px;}
-}
-@keyframes move { 
-  0%{right: 100px;}
-  100%{right: 0;}
-}
-@keyframes santaSki {
-  0%{left: 0; margin-top: 700px;}
-  50%{left: 50%; margin-top: 800px;}
-  100%{left: 100%; margin-top: 900px;}
-}
-@keyframes treeShake {
-  0%{
-    @include transform(rotate(-5deg));
-  }
-  3%{
-    @include transform(rotate(5deg));
-  }
-  6%{
-    @include transform(rotate(-5deg));
-  }
-  9%{
-    @include transform(rotate(5deg));
-  }
-  10%{
-    @include transform(rotate(0deg));
-  }
-  70%{
-    @include transform(rotate(0deg));
-  }
-  100%{
-    @include transform(rotate(0deg));
-  }
-}
-@keyframes gift {
-  0%{
-    bottom: 30px; opacity: 1;
-  }
-  100%{
-    bottom: -500px; opacity: 0;
-  }
-}
