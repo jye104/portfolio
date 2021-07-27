@@ -153,14 +153,14 @@
 @keyframes santaSki {
   0% {
     left: 0;
-    margin-top: 700px; }
+    margin-top: 1000px; }
   50% {
     left: 50%;
-    margin-top: 800px; }
+    margin-top: 1200px; }
   100% {
     left: 100%;
-    margin-top: 900px; } }
-@keyframes treeShake {
+    margin-top: 1400px; } }
+@keyframes shake {
   0% {
     -webkit-transform: rotate(-5deg);
     -moz-transform: rotate(-5deg);
@@ -189,13 +189,6 @@
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     transform: rotate(0deg); } }
-@keyframes gift {
-  0% {
-    bottom: 30px;
-    opacity: 1; }
-  100% {
-    bottom: -300px;
-    opacity: 0; } }
 @keyframes drift {
   from {
     -webkit-transform: rotate(0deg);

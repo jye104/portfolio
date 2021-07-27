@@ -69,6 +69,7 @@ section, figure{display: block;}
 .blind{width: 1px;height: 1px;overflow: hidden;border: none;position: absolute;clip: rect(1px, 1px, 1px, 1px);clip-path: inset(50%);}
 .opacity{opacity: 0 !important;}
 .visible{opacity: 1 !important; visibility: visible !important;}
+.white{color: #fff;}
 .main_tit{
   h2{
     font-size: 70px; color: transparent; line-height: 1; font-weight: 900; text-align: center;
@@ -187,7 +188,43 @@ section, figure{display: block;}
     left: 1000px; opacity: 0.9; animation: moveclouds 23s linear infinite, sideWays 2s ease-in-out infinite alternate;
   }
 }
-.spring .bg_deco, .fall .bg_deco, .summer .bg_deco{
+.summer .bg_deco{
+  position: absolute; background: rgb(84, 175, 221); width: 150px; height: 150px; transform-origin: 50% 48%; border-radius: 43%;/*  animation: , drift 3000ms infinite linear; */
+
+  &.deco1{
+    opacity: 0.2; background: no-repeat center / cover; left: 0;
+    animation: moveclouds 22s linear infinite, sideWays2 4s ease-in-out infinite alternate;
+  }
+  &.deco2{    
+    left: 1320px; opacity: 0.5; animation: moveclouds2 25s linear infinite, sideWays2 5s ease-in-out infinite alternate, drift 3000ms infinite linear; width: 50px; height: 50px;
+  }
+  &.deco3{
+    left: 180px; opacity: 0.3; animation: moveclouds2 20s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
+    width: 60px; height: 60px;
+  }
+  &.deco4{    
+    left: 1210px; opacity: 0.35; animation: moveclouds2 18s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco5{
+    left: 350px; opacity: 0.3; animation: moveclouds2 28s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco6{    
+    left: 630px; opacity: 0.3; animation: moveclouds2 13s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco7{    
+    left: 850px; opacity: 0.7; animation: moveclouds2 20s linear infinite, sideWays2 3s ease-in-out infinite alternate, drift 3000ms infinite linear; width: 70px; height: 70px;
+  }
+  &.deco8{
+    left: 80px; opacity: 0.5; animation: moveclouds2 15s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco9{    
+    left: 1540px; opacity: 0.8; animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
+  }
+  &.deco10{
+    left: 1000px; opacity: 0.9; animation: moveclouds2 23s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear; width: 80px; height: 80px;
+  }
+}
+.spring .bg_deco, .fall .bg_deco{
   background: no-repeat center / cover; position: absolute;
   &.deco1{
     @include transform(scale(0.9));
