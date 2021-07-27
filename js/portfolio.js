@@ -40,12 +40,13 @@ $(document).ready(function () {
     for (let i = 0; i < total; i++) {
       cntY[i] = $cnt.eq(i).offset().top;
     }
-    // console.log($end, typeof $end);
+    console.log($end, typeof $end);
 
     // 클릭하면 나오고 '.click' 없애기
-    
-    $ipodBtn.parent($ipod).stop().animate({left: '30%'}).find('.click').addClass('d_n').parent().attr({tabIndex: -1});
-    $('.first').focus();
+    $ipodBtn.parent($ipod).stop().animate({left: '30%'}).find('.click').addClass('d_n').parent().attr({
+      tabIndex: -1
+    });
+
     $ipod.siblings().attr({'aria-hidden': true, inert: ''});
 
     // #dim 동적생성
@@ -55,7 +56,7 @@ $(document).ready(function () {
 
     // 키보드 트래핑 - first, last 요소 제어
     $first.on('keydown', function (e) {
-      //console.log(e.keyCode); // tab -> 9
+      console.log(e.keyCode); // tab -> 9
       if (e.shiftKey && e.keyCode === 9) {
         e.preventDefault();
         $last.focus();
@@ -91,7 +92,6 @@ $(document).ready(function () {
       $(this).parent().addClass('on');
       return false;
     });
-    let listNum;
     $ipodList.dblclick(function () {
       if ($('html, body').is(':animated')) return false;
       listNum = $(this).parent().index();
@@ -122,52 +122,27 @@ $(document).ready(function () {
       }
     });
         // .btn_ctrl 제어(키보드)
-    $(window).on('keydown', function(e){
+    $(document).on('keydown', function(e){
       if ($('html, body').is(':animated')) return false;
-      const key = e.keyCode;
+      const key = e.keycode;
       const $tg = $(e.target);
       console.log(key, $tg);
-      if ((key === 37)) {
-        if ($ipodList.parent('.on').children().is('.first')) {
-          $first.parent().removeClass('on');
-          $end.parent().addClass('on');
-        } else {
-          $ipodList.parent('.on').removeClass('on').prev().addClass('on');
-        }
-      }
-      if ((key === 39)) {
-        if ($ipodList.parent('.on').children().is('.end')) {
-          $end.parent().removeClass('on');
-          $first.parent().addClass('on');
-        } else {
-          $ipodList.parent('.on').removeClass('on').next().addClass('on');
-        }
-      }
-      if((key === 38)) {
-        if ($('html, body').is(':animated')) return false;
-        listNum = $ipodList.parent('.on').index();
-        $('html, body').stop().animate({scrollTop: cntY[listNum]}, 500, 'easeOutBack', a11y);
-      }      
-      if((key === 40)) {$close.click();}
-      if((key === 13)||(key === 32) && (($tg).is('.ipod_list a'))){
-        $(tg)
-        return false;
-      }
+      if ((key === 37) && ($tg.is('.btn_ctrl button'))) $('.btn_left').click();
 
     });
 
     // 접근성 추가
-    function a11y() {
-      // 현재 본문
-      $cnt.eq(listNum).removeAttr('aria-hidden inert').find('a, button').removeAttr('tabIndex');
-      $cnt.eq(listNum).find('.tabIndex').attr('tabIndex', 0)
-      // 나머지 본문들
-      $cnt.eq(listNum).siblings().attr({
-        'aria-hidden': true,
-        'inert': ''
-      }).find('a, button, .tabIndex').attr('tabIndex', -1);
-    }
   });
+  function a11y() {
+    // 현재 본문
+    $cnt.eq(listNum).removeAttr('aria-hidden inert').find('a, button').removeAttr('tabIndex');
+    $cnt.eq(listNum).find('.tabIndex').attr('tabIndex', 0)
+    // 나머지 본문들
+    $cnt.eq(listNum).siblings().attr({
+      'aria-hidden': true,
+      'inert': ''
+    }).find('a, button, .tabIndex').attr('tabIndex', -1);
+  }
 
   // fade 효과
   $(window).on('scroll', function(){
@@ -278,7 +253,7 @@ $(document).ready(function () {
       $('#cnt2').find('.brand_txt').removeClass('visible');
 
     } else if (scrollY < $('.bg_sulwhasoo').offset().top) { //스티키  영역
-      // console.log('3) 스티키  영역');
+      console.log('3) 스티키  영역');
 
       gsap.to('.computer', {scale: 1, left: -leftPos, duration: 0.5, ease: Power3.easeOut});
       $('#cnt2').find('.txt_sulwhasoo').addClass('opacity hidden');
@@ -402,7 +377,6 @@ $(document).ready(function () {
   });
   });
 
-  // about me 버튼 클릭시 class 제어
   $('#cnt3').find('.sticky_btn button').on('click', function(){
     if($(this).is('.normal')){
       $('#cnt3').removeClass('spring summer fall winter');
@@ -440,7 +414,7 @@ $(document).ready(function () {
       $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
       $cntWrap.stop().animate({marginLeft: -tgNum * winWid}, 500, springA11y);
     });
-    // prev, next 버튼
+
     $('#cnt3 .p_n button').on('click', function (){
         const btnNum = $(this).index();
         if ($cntWrap.is(':animated')) return false;
@@ -479,93 +453,6 @@ $(document).ready(function () {
       }).find('a, button, .tabIndex').attr('tabIndex', -1);
     }
   });
-
-  // .summer fullpage
-  $('#cnt3').find('.sticky_btn button').on('click', function(){
-    const $win = $(window);
-    const $pageEle = $('.pagination ul li');
-    const $cnt = $('#container_wrap .container');
-    const total = $cnt.length;
-    let tgIdx = 0;
-    let cntY;
-    let timerResize = 0;
-    let timerScroll = 0;
-    let timerWheel = 0;
-    $pageEle.eq(0).addClass('on');
-
-    if($(this).is('.summer')){
-      $win.on('resize',function(){
-        clearTimeout(timerResize);
-        timerResize = setTimeout(function(){
-          cntY = new Array(total);
-          for (let i=0; i<total; i++){
-          cntY[i] = $cnt.eq(i).offset().top;
-          }         
-          $('html, body').stop().animate({scrollTop: cntY[tgIdx]}, 1000, 'easeOutBack');
-          accessibility();
-        }, 50);
-      });
-      $win.trigger('resize');
-      
-      $win.on('scroll', function () {
-        clearTimeout(timerScroll);    
-        timerScroll = setTimeout(function () {
-          $pageEle.each(function (idx) {
-            if ($win.scrollTop() >= cntY[idx]) {
-              $(this).addClass('on').siblings().removeClass('on');
-              tgIdx = idx; 
-              accessibility();
-            }
-          });
-        }, 20);
-      });
-
-      $pageEle.children().on('click', function () {
-        if ($('html, body').is(':animated')) return false;
-        tgIdx = $(this).parent().index();
-        $(this).parent().addClass('on').siblings().removeClass('on');
-       $('html, body').stop().animate({scrollTop: cntY[tgIdx]}, 700, accessibility);
-      });
-
-      $(document).on('keydown', function(e){
-        if ($('html, body').is(':animated')) return false;
-        const key = e.keyCode;
-        // console.log(key);
-        // keydown 이벤트를 일으키는 대상 선택자 알아오기 => e.target
-        const $tg = $(e.target);
-        if (key === 38 && tgIdx > 0) tgIdx--; // 상단 방향키
-        else if (key === 40 && tgIdx < total) tgIdx++; // 하단 방향키
-        else if ((key === 13 || key === 32) && $tg.is('.nav_btn')) tgIdx = $(this).parent().index();
-        
-        // animate()가 일어나면 스크롤 이벤트가 자동으로 생성되어 #fp-nav li.on은 제어됨
-        $('html, body').stop().animate({scrollTop: cntY[tgIdx]}, 700, accessibility);
-      });
-
-      $cnt.on('mousewheel DOMMouseScroll', function(e){
-        clearTimeout(timerWheel);
-        timerWheel = setTimeout(function(){
-    
-          if ($('html, body').is(':animated')) return false;
-          const delta = e.originalEvent.wheelDelta || e.originalEvent.detail * -1;
-    
-          if(delta > 0 && tgIdx > 0){ // 휠 올리기
-              tgIdx--;
-            } else if(delta < 0 && tgIdx < total ){ // 휠 내리기
-              tgIdx++;
-            } 
-          $('html, body').stop().animate({scrollTop: cntY[tgIdx]}, 700, 'easeOutBack', accessibility);
-        }, 150);
-      });
-
-    }
-    function accessibility(){
-      // 현재 선택된 본문
-      $cnt.eq(tgIdx).removeAttr('aria-hidden inert').find('a, button').removeAttr('tabIndex'); 
-      $cnt.eq(tgIdx).find('.tabIndex').attr('tabIndex', 0)
-      // 나머지 본문들
-      $cnt.eq(tgIdx).siblings().attr({'aria-hidden': true, 'inert': ''}).find('a, button, .tabIndex').attr('tabIndex', -1);
-    }
-  });
   
   //.fall .sticky
   $('#cnt3').find('.sticky_btn button').on('click', function(){
@@ -582,5 +469,4 @@ $(document).ready(function () {
      });
     }
   });
-
 });

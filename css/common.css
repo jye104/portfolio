@@ -88,9 +88,6 @@ section, figure {
   opacity: 1 !important;
   visibility: visible !important; }
 
-.white {
-  color: #fff; }
-
 .main_tit h2 {
   font-size: 70px;
   color: transparent;
@@ -305,131 +302,73 @@ section, figure {
     opacity: 0.9;
     animation: moveclouds 23s linear infinite, sideWays 2s ease-in-out infinite alternate; }
 
-.summer .bg_deco {
-  position: absolute;
-  background: #54afdd;
-  width: 150px;
-  height: 150px;
-  transform-origin: 50% 48%;
-  border-radius: 43%;
-  /*  animation: , drift 3000ms infinite linear; */ }
-  .summer .bg_deco.deco1 {
-    opacity: 0.2;
-    background: no-repeat center / cover;
-    left: 0;
-    animation: moveclouds 22s linear infinite, sideWays2 4s ease-in-out infinite alternate; }
-  .summer .bg_deco.deco2 {
-    left: 1320px;
-    opacity: 0.5;
-    animation: moveclouds2 25s linear infinite, sideWays2 5s ease-in-out infinite alternate, drift 3000ms infinite linear;
-    width: 50px;
-    height: 50px; }
-  .summer .bg_deco.deco3 {
-    left: 180px;
-    opacity: 0.3;
-    animation: moveclouds2 20s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
-    width: 60px;
-    height: 60px; }
-  .summer .bg_deco.deco4 {
-    left: 1210px;
-    opacity: 0.35;
-    animation: moveclouds2 18s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear; }
-  .summer .bg_deco.deco5 {
-    left: 350px;
-    opacity: 0.3;
-    animation: moveclouds2 28s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear; }
-  .summer .bg_deco.deco6 {
-    left: 630px;
-    opacity: 0.3;
-    animation: moveclouds2 13s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear; }
-  .summer .bg_deco.deco7 {
-    left: 850px;
-    opacity: 0.7;
-    animation: moveclouds2 20s linear infinite, sideWays2 3s ease-in-out infinite alternate, drift 3000ms infinite linear;
-    width: 70px;
-    height: 70px; }
-  .summer .bg_deco.deco8 {
-    left: 80px;
-    opacity: 0.5;
-    animation: moveclouds2 15s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear; }
-  .summer .bg_deco.deco9 {
-    left: 1540px;
-    opacity: 0.8;
-    animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear; }
-  .summer .bg_deco.deco10 {
-    left: 1000px;
-    opacity: 0.9;
-    animation: moveclouds2 23s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear;
-    width: 80px;
-    height: 80px; }
-
-.spring .bg_deco, .fall .bg_deco {
+.spring .bg_deco, .fall .bg_deco, .summer .bg_deco {
   background: no-repeat center / cover;
   position: absolute; }
-  .spring .bg_deco.deco1, .fall .bg_deco.deco1 {
+  .spring .bg_deco.deco1, .fall .bg_deco.deco1, .summer .bg_deco.deco1 {
     -webkit-transform: scale(0.9);
     -moz-transform: scale(0.9);
     transform: scale(0.9);
     opacity: 0.2;
     background: no-repeat center / cover;
     animation: moveclouds 22s linear infinite, sideWays2 4s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco2, .fall .bg_deco.deco2 {
+  .spring .bg_deco.deco2, .fall .bg_deco.deco2, .summer .bg_deco.deco2 {
     -webkit-transform: scale(0.62);
     -moz-transform: scale(0.62);
     transform: scale(0.62);
     left: 1320px;
     opacity: 0.5;
     animation: moveclouds2 25s linear infinite, sideWays2 5s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco3, .fall .bg_deco.deco3 {
+  .spring .bg_deco.deco3, .fall .bg_deco.deco3, .summer .bg_deco.deco3 {
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     transform: scale(1);
     left: 180px;
     opacity: 0.3;
     animation: moveclouds2 20s linear infinite, sideWays2 4s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco4, .fall .bg_deco.deco4 {
+  .spring .bg_deco.deco4, .fall .bg_deco.deco4, .summer .bg_deco.deco4 {
     -webkit-transform: scale(0.75) rotate(10deg);
     -moz-transform: scale(0.75) rotate(10deg);
     transform: scale(0.75) rotate(10deg);
     left: 1210px;
     opacity: 0.35;
     animation: moveclouds2 18s linear infinite, sideWays2 6s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco5, .fall .bg_deco.deco5 {
+  .spring .bg_deco.deco5, .fall .bg_deco.deco5, .summer .bg_deco.deco5 {
     -webkit-transform: scale(0.8) rotate(70deg);
     -moz-transform: scale(0.8) rotate(70deg);
     transform: scale(0.8) rotate(70deg);
     left: 350px;
     opacity: 0.3;
     animation: moveclouds2 28s linear infinite, sideWays2 2s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco6, .fall .bg_deco.deco6 {
+  .spring .bg_deco.deco6, .fall .bg_deco.deco6, .summer .bg_deco.deco6 {
     -webkit-transform: scale(0.95) rotate(-45deg);
     -moz-transform: scale(0.95) rotate(-45deg);
     transform: scale(0.95) rotate(-45deg);
     left: 630px;
     opacity: 0.3;
     animation: moveclouds2 13s linear infinite, sideWays2 4s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco7, .fall .bg_deco.deco7 {
+  .spring .bg_deco.deco7, .fall .bg_deco.deco7, .summer .bg_deco.deco7 {
     -webkit-transform: scale(0.86) rotate(45deg);
     -moz-transform: scale(0.86) rotate(45deg);
     transform: scale(0.86) rotate(45deg);
     left: 850px;
     opacity: 0.7;
     animation: moveclouds2 20s linear infinite, sideWays2 3s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco8, .fall .bg_deco.deco8 {
+  .spring .bg_deco.deco8, .fall .bg_deco.deco8, .summer .bg_deco.deco8 {
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     transform: scale(0.5);
     left: 980px;
     opacity: 0.5;
     animation: moveclouds2 15s linear infinite, sideWays2 6s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco9, .fall .bg_deco.deco9 {
+  .spring .bg_deco.deco9, .fall .bg_deco.deco9, .summer .bg_deco.deco9 {
     -webkit-transform: scale(0.85);
     -moz-transform: scale(0.85);
     transform: scale(0.85);
     left: 1440px;
     opacity: 0.8;
     animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate; }
-  .spring .bg_deco.deco10, .fall .bg_deco.deco10 {
+  .spring .bg_deco.deco10, .fall .bg_deco.deco10, .summer .bg_deco.deco10 {
     -webkit-transform: scale(0.6) rotate(350deg);
     -moz-transform: scale(0.6) rotate(350deg);
     transform: scale(0.6) rotate(350deg);
