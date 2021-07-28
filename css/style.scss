@@ -170,7 +170,6 @@
   }
 }
 
-
 #cnt2{
   background: linear-gradient(#333 6%, #888 15%, #fcf8f1 30%, #fcb95e 55%, #f57e3c 100%);
   .sticky_wrap{
@@ -186,7 +185,7 @@
       height: 100vh; 
       position: sticky; top: 0; overflow: hidden;
       .scroll_down{
-        position: absolute; left: 50%; bottom: 30px;
+        position: absolute; left: 50%; bottom: 75px; color: #fff;
         display: block; border: 1px solid #fff; width: 40px; height: 65px; font-size: 11px; text-align: center; border-radius: 30px; padding-top: 10px; font-weight: 300;
         &::before{
           content: ""; position: absolute;background: #fff; width: 1px; height: 30px; bottom: -20px; left: 50%; margin-left: -0.5px; animation: scrollDown 0.6s alternate-reverse infinite;
@@ -234,83 +233,83 @@
       }
       p{background:rgba(255, 255, 255, .3); bottom: 3%; left: 4%; }
     }
+    .newsletter{
+      @include flex;
+      @include flex-direction;
+      @include align-items;
+      position: relative; color: #222;padding: 100px 0; overflow: hidden;
+      .bg_sulwhasoo{
+        font-weight: 900; font-size: 200px; color: #fff; -webkit-text-stroke: 4px #fff; -webkit-text-fill-color: transparent; opacity: 0.2;
+        p{position: absolute;}
+        :nth-child(1){top: 10%; left: 0;}
+        :nth-child(2){top: 30%; right: 0;}
+        :nth-child(3){top: 40%; left: 0;}
+        :nth-child(4){top: 50%; right: 0;}
+        :nth-child(5){top: 60%; left: 0;}
+        :nth-child(6){top: 70%; right: 0;}
+      }
+      .news_txt{
+        @include flex;
+        @include align-items;
+        @include justify-content;
+        width: 100%; padding-bottom: 40px;
+        h3, p{padding: 20px 35px;}
+        h3{
+          color: #ffe6c4; text-shadow: 4px 4px 0px #390510, 7px 7px 0px #f57e3c, 10px 10px 0px #fcf8f1, 12px 12px 0px #ffaa9b;
+          &:hover{text-shadow: 6px 6px 0px #390510, 9px 9px 0px #f57e3c, 12px 12px 0px #fcf8f1, 15px 15px 0px #ffaa9b;}
+        }
+      }
+      .news_hover_txt{
+        position: absolute; bottom: 350px; right: 80px;padding: 10px; color: #fff; text-shadow: 2px 2px 2px rgba(104, 104, 104, 0.5);
+        svg{
+          position: absolute; top: -20px; left: -200px;
+          circle{fill: #f57e3c}
+          path{fill: none; stroke: #f57e3c; stroke-linecap: round; stroke-width: 4px}      
+        }
+        strong{font-size: 24px; text-align: right; display: block; padding-bottom: 10px;}
+        p{text-align: right; line-height: 1.5;}
+      }
+    }
+    .portfolio_ww{
+      @include flex;
+      @include align-items;
+      @include justify-content(space-around);
+      position: relative; height: 100vh;color: #333;
+      background: linear-gradient(#ffefef  30%, #FFF1F1 50%, #ffdede 70%, #ffc9c9 80%);
+      .txt_withWine{position: relative;
+        strong{color: #ec8787; opacity: 0.1; font-size: 100px; position: absolute; top: -90px;left: -26px; letter-spacing: -0.035em;}
+        h2{background: linear-gradient(225deg, #ec6060 10%, #f8c6c6 50%, #ffc9c9 80%, #ec6060 100%); -webkit-background-clip: text; background-clip: text;}
+        .btn_more_wrap{
+           .square{stroke: #ec8787;}
+          &:hover a + svg .square, &:focus + svg .square{
+            animation-name: square2;
+          }
+        }
+      }
+      img{width: 900px; height: 591px;}
+      .wrap_open_btn{
+        position: absolute; top: 130px; right: 90px; width: 900px; height: 591px;
+        .md_open_btn{
+          @include transition(all 0.5s);
+          position: absolute; font-size: 30px; border-radius: 50%; background: #ffe2e2; width: 40px; height: 40px; line-height: 40px; box-shadow: 1px 1px 8px #d6111179; z-index: 2;
+          &::before, &::after{
+            @include transition(all 0.5s);
+            content: ""; position: absolute; top: 0; left: 0; width: 40px; height: 40px; background: #ffe2e2; border-radius: 50%; animation: circle 3s infinite forwards; z-index: -1;}
+          &::after{animation-delay: 0.6s;}
+          &:hover, &:focus{
+            @include transform(rotate(360deg));
+            width: 45px;height: 45px; font-size: 35px;
+            &::before, &::after{width: 45px; height: 45px;};
+          }
+        }
+        :nth-child(1){left: 18%;}
+        :nth-child(2){top: 42%; right: 5%;}
+        :nth-child(3){top: 38%; left: 0;}
+        :nth-child(4){top: 50%; right: 53%;}
+      }
+    }
   }
 
-.newsletter{
-  @include flex;
-  @include flex-direction;
-  @include align-items;
-  position: relative; color: #222;padding: 100px 0; overflow: hidden;
-  .bg_sulwhasoo{
-    font-weight: 900; font-size: 200px; color: #fff; -webkit-text-stroke: 4px #fff; -webkit-text-fill-color: transparent; opacity: 0.2;
-    p{position: absolute;}
-    :nth-child(1){top: 10%; left: 0;}
-    :nth-child(2){top: 30%; right: 0;}
-    :nth-child(3){top: 40%; left: 0;}
-    :nth-child(4){top: 50%; right: 0;}
-    :nth-child(5){top: 60%; left: 0;}
-    :nth-child(6){top: 70%; right: 0;}
-  }
-  .news_txt{
-    @include flex;
-    @include align-items;
-    @include justify-content;
-    width: 100%; padding-bottom: 40px;
-    h3, p{padding: 20px 35px;}
-    h3{
-      color: #ffe6c4; text-shadow: 4px 4px 0px #390510, 7px 7px 0px #f57e3c, 10px 10px 0px #fcf8f1, 12px 12px 0px #ffaa9b;
-      &:hover{text-shadow: 6px 6px 0px #390510, 9px 9px 0px #f57e3c, 12px 12px 0px #fcf8f1, 15px 15px 0px #ffaa9b;}
-    }
-  }
-  .news_hover_txt{
-    position: absolute; bottom: 350px; right: 80px;padding: 10px; color: #fff; text-shadow: 2px 2px 2px rgba(104, 104, 104, 0.5);
-    svg{
-      position: absolute; top: -20px; left: -200px;
-      circle{fill: #f57e3c}
-      path{fill: none; stroke: #f57e3c; stroke-linecap: round; stroke-width: 4px}      
-    }
-    strong{font-size: 24px; text-align: right; display: block; padding-bottom: 10px;}
-    p{text-align: right; line-height: 1.5;}
-  }
-}
-.portfolio_ww{
-  @include flex;
-  @include align-items;
-  @include justify-content(space-around);
-  position: relative; height: 100vh;color: #333;
-  background: linear-gradient(#ffefef  30%, #FFF1F1 50%, #ffdede 70%, #ffc9c9 80%);
-  .txt_withWine{position: relative;
-    strong{color: #ec8787; opacity: 0.1; font-size: 100px; position: absolute; top: -90px;left: -26px; letter-spacing: -0.035em;}
-    h2{background: linear-gradient(225deg, #ec6060 10%, #f8c6c6 50%, #ffc9c9 80%, #ec6060 100%); -webkit-background-clip: text; background-clip: text;}
-    .btn_more_wrap{
-       .square{stroke: #ec8787;}
-      &:hover a + svg .square, &:focus + svg .square{
-        animation-name: square2;
-      }
-    }
-  }
-  img{width: 900px; height: 591px;}
-  .wrap_open_btn{
-    position: absolute; top: 130px; right: 90px; width: 900px; height: 591px;
-    .md_open_btn{
-      @include transition(all 0.5s);
-      position: absolute; font-size: 30px; border-radius: 50%; background: #ffe2e2; width: 40px; height: 40px; line-height: 40px; box-shadow: 1px 1px 8px #d6111179; z-index: 2;
-      &::before, &::after{
-        @include transition(all 0.5s);
-        content: ""; position: absolute; top: 0; left: 0; width: 40px; height: 40px; background: #ffe2e2; border-radius: 50%; animation: circle 3s infinite forwards; z-index: -1;}
-      &::after{animation-delay: 0.6s;}
-      &:hover, &:focus{
-        @include transform(rotate(360deg));
-        width: 45px;height: 45px; font-size: 35px;
-        &::before, &::after{width: 45px; height: 45px;};
-      }
-    }
-    :nth-child(1){left: 18%;}
-    :nth-child(2){top: 42%; right: 5%;}
-    :nth-child(3){top: 38%; left: 0;}
-    :nth-child(4){top: 50%; right: 53%;}
-  }
-}
 
 #cnt3{
   padding-top: 20px;
@@ -404,7 +403,7 @@
   }
   #container_wrap .wa{
     @include justify-content(flex-end);
-    overflow: hidden;
+    overflow: hidden; position: relative;
     .wa_txt{
       font-size: 23px; padding-right: 20px; text-align: right;
       .ex{font-size: 18px; color: #8d8d8d;}
@@ -506,24 +505,41 @@
     background: #b1e9ff; color: #333;
     .cnt3_wrap .sticky strong{color: #1e74bb;}
     .cnt3_wrap #container_wrap .info .info_txt .hello{color:#1e74bb; }
-    .hover{display: none;}
-    .controller{display: none;}
-    .bg_deco{
-      @include transform(skew(180deg));
-      width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.6); background: rgba(30, 116, 187, 0.2);
+    #container_wrap{
+      height: 400vh; overflow: hidden;
+      .container{
+        height: 100vh; width: 100%;
+      }
     }
-    .container{position: relative;}
-    .deco{
-      opacity: .4; content: ""; position: absolute; top: 3%; left: 85%; background: #0af; width: 500px; height: 500px; margin-left: -250px; margin-top: -250px; transform-origin: 50% 48%; border-radius: 43%; animation: drift 3000ms infinite linear;
-    }
-    .info .contact{
-      
-    }
-    .wa .deco{
-
-    }
-    .contact .deco{
-
+    .controller{display: block;}
+    .hover, .p_n{display: none;}
+    .pagination{
+      @include translateY-50;
+      position: fixed; top: 50%; left: 20px; font-size: 20px; z-index: 10;
+      ul{
+        li{
+          padding: 10px 0;
+          button{
+            @include flex;
+            @include justify-content(flex-start);
+            @include align-items;
+            width: 130px;
+            .txt{
+              width: 100px; line-height: 20px; text-align: left;
+            }
+            .icon{
+              position: relative; width: 20px; height: 20px; border: 2px solid #136297; border-radius: 50%; margin-right: 10px;
+              &:after{
+                @include transition(all 0.5s);
+                content: ""; position: absolute; width: 100%; height: 100%; border-radius: 50%; background: #136297; top: 0;left: 0; border-radius: 50%;}
+            }            
+          }
+        }
+        li button:hover .txt, li.on button .txt{color: #136297;}
+        li.on button .icon::after{
+          @include transform(scale(0.4));
+        }
+      }
     }
   }
   &.fall{
@@ -578,18 +594,13 @@
       background: url("../images/santa.png") no-repeat; width: 243px; height: 500px; margin-top: 500px; animation: rotateSanta 1s cubic-bezier(0.39, 0.58, 0.57, 1) alternate-reverse infinite; position: absolute; right: 0;
     }
     .wa .deco{
-      background: url("../images/snowman_ski.png") no-repeat; width: 500px; height: 500px; position: absolute; left: 0; animation: santaSki 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+      background: url("../images/ring_small.png") no-repeat; width: 212px; height: 212px;  position: absolute; bottom: 65px; left: 180px; animation: shake 5s ease infinite;
+      &::after{
+        content: ""; position: absolute; bottom: 35px; left: -150px; background: url("../images/ring_small.png") no-repeat; width: 212px; height: 212px; background: url("../images/ring_big.png") no-repeat; width: 300px; height: 349px; animation: shake 3s 3s ease infinite;
+      }
     }
-    .skill{ position: relative;
-      .deco{
-        background: url("../images/tree.png") no-repeat; width: 400px; height: 591px; position: absolute; bottom: 0; right: 0px; z-index: 5; animation: treeShake 5s infinite;
-      }
-      .deco2{
-        background: url("../images/gift1.png") no-repeat; width: 150px; height: 150px; position: absolute; bottom: -20px; right: -500px; animation: gift 5s infinite, move2 1.5s cubic-bezier(0.51, 0.11, 0.57, 1) alternate-reverse  infinite;
-      }
-      .deco3{
-        content: ""; position: absolute; background: url("../images/gift2.png") no-repeat; width: 150px; height: 150px; bottom: 0; animation: rotateSanta 1s ease-in-out alternate-reverse infinite, gift 5s infinite ; right: 300px;
-      }
+    .skill .deco{
+      background: url("../images/snowman_ski.png") no-repeat; width: 500px; height: 500px; position: absolute; left: 0; animation: santaSki 4s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
   }
 
