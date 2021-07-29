@@ -518,13 +518,11 @@ $(document).ready(function () {
         if ($('html, body').is(':animated')) return false;
         const key = e.keyCode;
         // console.log(key);
-        // keydown 이벤트를 일으키는 대상 선택자 알아오기 => e.target
         const $tg = $(e.target);
         if (key === 38 && tgIdx > 0) tgIdx--; // 상단 방향키
         else if (key === 40 && tgIdx < total) tgIdx++; // 하단 방향키
         else if ((key === 13 || key === 32) && $tg.is('.nav_btn')) tgIdx = $(this).parent().index();
         
-        // animate()가 일어나면 스크롤 이벤트가 자동으로 생성되어 #fp-nav li.on은 제어됨
         $('html, body').stop().animate({scrollTop: cntY[tgIdx]}, 700, accessibility);
       });
 
@@ -558,8 +556,6 @@ $(document).ready(function () {
   $('#cnt3').find('.sticky_btn button').on('click', function(){
     const winHei = $(window).height();
     const stickyY = $('#container_wrap').offset().top;
-
-    clearTimeout(timerResize);
 
 
 
