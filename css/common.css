@@ -191,46 +191,30 @@ section, figure {
     -moz-transform: rotateY(0deg);
     transform: rotateY(0deg); }
 
-/* fade 효과 */
-.fade .fade_up, .fade .fade_down, .fade .fade_right, .fade .fade_left {
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  transition: all 0.8s;
-  opacity: 0; }
-
-.fade.on .fade_up, .fade.on .fade_down, .fade.on .fade_right, .fade.on .fade_left {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  transform: translate(0, 0);
-  opacity: 1; }
-
-.fade .fade_up {
-  -webkit-transform: translate(0, 100px);
-  -moz-transform: translate(0, 100px);
-  transform: translate(0, 100px); }
-
-.fade .fade_down {
-  -webkit-transform: translate(0, -100px);
-  -moz-transform: translate(0, -100px);
-  transform: translate(0, -100px); }
-
-.fade .fade_right {
-  -webkit-transform: translate(-100px, 0);
-  -moz-transform: translate(-100px, 0);
-  transform: translate(-100px, 0); }
-
-.fade .fade_left {
-  -webkit-transform: translate(100px, 0);
-  -moz-transform: translate(100px, 0);
-  transform: translate(100px, 0); }
-
-.delay-3 {
-  -webkit-transition-delay: 0.3s;
-  -moz-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  transition-delay: 0.3s; }
-
+/* fade 효과
+.fade .fade_up, .fade .fade_down, .fade .fade_right, .fade .fade_left{
+  @include transition(all 0.8s);
+  opacity: 0;
+}
+.fade.on .fade_up, .fade.on .fade_down, .fade.on .fade_right, .fade.on .fade_left{
+  @include transform(translate(0,0));
+  opacity: 1;
+}
+.fade .fade_up{
+  @include transform(translate(0,100px));
+}
+.fade .fade_down{
+  @include transform(translate(0,-100px));
+}
+.fade .fade_right{
+  @include transform(translate(-100px,0));
+}
+.fade .fade_left{
+  @include transform(translate(100px,0));
+}
+.delay-3{
+  @include transition-delay(0.3s);
+} */
 .winter .bg_deco {
   background: no-repeat center / cover;
   position: absolute; }

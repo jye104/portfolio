@@ -120,7 +120,7 @@ section, figure{display: block;}
     @include transform(rotateY(0deg));
   }
 } 
-/* fade 효과 */
+/* fade 효과
 .fade .fade_up, .fade .fade_down, .fade .fade_right, .fade .fade_left{
   @include transition(all 0.8s);
   opacity: 0;
@@ -143,7 +143,7 @@ section, figure{display: block;}
 }
 .delay-3{
   @include transition-delay(0.3s);
-}
+} */
 .winter .bg_deco{
   background: no-repeat center / cover; position: absolute;
   &.deco1{
