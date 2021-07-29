@@ -19,7 +19,7 @@ $(document).ready(function () {
   // #intro ↓버튼
   $('#intro .arrow').on('click', function(){
     if ($('html, body').is(':animated')) return false;
-    $('html, body').stop().animate({scrollTop: $('#welcome').offset().top}, 800, 'easeOutBack', a11y);
+    $('html, body').stop().animate({scrollTop: $('#welcome').offset().top}, 800, 'easeOutBack');
 
   });
 
@@ -191,7 +191,8 @@ $(document).ready(function () {
   });
 
   // transform(rotateY)
-  $('#container_wrap .photo_wrap').on({
+  $('#container_wrap .photo_hover').attr({tabIndex: 0});
+  $('#container_wrap .photo_hover').on({
     focusin: function(){
       $(this).addClass('flip');
     },
@@ -199,8 +200,6 @@ $(document).ready(function () {
       $(this).removeClass('flip');
     }
   });
-
-  $(window).trigger('scroll');
 
   // 설화수 글씨 이동 효과
   $(window).scroll(function(){
@@ -415,7 +414,6 @@ $(document).ready(function () {
     const $pageLi = $('.pagination li');
     const cntTotal = $('#cnt3 .container').length;
     const maxStep = cntTotal - 1;
-    
     let winWid = $(window).width();
     let tgNum = 0;
   
@@ -560,6 +558,11 @@ $(document).ready(function () {
   $('#cnt3').find('.sticky_btn button').on('click', function(){
     const winHei = $(window).height();
     const stickyY = $('#container_wrap').offset().top;
+
+    clearTimeout(timerResize);
+
+
+
     if ($(this).is('.fall')){
     //console.log(stickyY);
      $(window).on('scroll', function(){
