@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* fonts */
 @font-face {
   font-family: NotoSansKR;
@@ -190,45 +191,30 @@ section, figure {
     -moz-transform: rotateY(0deg);
     transform: rotateY(0deg); }
 
-.fade .fade_up, .fade .fade_down, .fade .fade_right, .fade .fade_left {
-  -webkit-transition: all 0.8s;
-  -moz-transition: all 0.8s;
-  -o-transition: all 0.8s;
-  transition: all 0.8s;
-  opacity: 0; }
-
-.fade.on .fade_up, .fade.on .fade_down, .fade.on .fade_right, .fade.on .fade_left {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  transform: translate(0, 0);
-  opacity: 1; }
-
-.fade .fade_up {
-  -webkit-transform: translate(0, 100px);
-  -moz-transform: translate(0, 100px);
-  transform: translate(0, 100px); }
-
-.fade .fade_down {
-  -webkit-transform: translate(0, -100px);
-  -moz-transform: translate(0, -100px);
-  transform: translate(0, -100px); }
-
-.fade .fade_right {
-  -webkit-transform: translate(-100px, 0);
-  -moz-transform: translate(-100px, 0);
-  transform: translate(-100px, 0); }
-
-.fade .fade_left {
-  -webkit-transform: translate(100px, 0);
-  -moz-transform: translate(100px, 0);
-  transform: translate(100px, 0); }
-
-.delay-3 {
-  -webkit-transition-delay: 0.3s;
-  -moz-transition-delay: 0.3s;
-  -o-transition-delay: 0.3s;
-  transition-delay: 0.3s; }
-
+/* fade 효과
+.fade .fade_up, .fade .fade_down, .fade .fade_right, .fade .fade_left{
+  @include transition(all 0.8s);
+  opacity: 0;
+}
+.fade.on .fade_up, .fade.on .fade_down, .fade.on .fade_right, .fade.on .fade_left{
+  @include transform(translate(0,0));
+  opacity: 1;
+}
+.fade .fade_up{
+  @include transform(translate(0,100px));
+}
+.fade .fade_down{
+  @include transform(translate(0,-100px));
+}
+.fade .fade_right{
+  @include transform(translate(-100px,0));
+}
+.fade .fade_left{
+  @include transform(translate(100px,0));
+}
+.delay-3{
+  @include transition-delay(0.3s);
+} */
 .winter .bg_deco {
   background: no-repeat center / cover;
   position: absolute; }
@@ -315,49 +301,49 @@ section, figure {
     opacity: 0.2;
     background: no-repeat center / cover;
     left: 0;
-    animation: moveclouds 22s linear infinite, sideWays 4s ease-in-out infinite alternate; }
+    animation: moveclouds 22s linear infinite, sideWays2 4s ease-in-out infinite alternate; }
   .summer .bg_deco.deco2 {
     left: 1320px;
     opacity: 0.5;
-    animation: moveclouds2 25s linear infinite, sideWays 5s ease-in-out infinite alternate, drift 3000ms infinite linear;
+    animation: moveclouds2 25s linear infinite, sideWays2 5s ease-in-out infinite alternate, drift 3000ms infinite linear;
     width: 50px;
     height: 50px; }
   .summer .bg_deco.deco3 {
     left: 180px;
     opacity: 0.3;
-    animation: moveclouds2 20s linear infinite, sideWays 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
+    animation: moveclouds2 20s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear;
     width: 60px;
     height: 60px; }
   .summer .bg_deco.deco4 {
     left: 1210px;
     opacity: 0.35;
-    animation: moveclouds2 18s linear infinite, sideWays 6s ease-in-out infinite alternate, drift 3000ms infinite linear; }
+    animation: moveclouds2 18s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear; }
   .summer .bg_deco.deco5 {
     left: 350px;
     opacity: 0.3;
-    animation: moveclouds2 28s linear infinite, sideWays 2s ease-in-out infinite alternate, drift 3000ms infinite linear; }
+    animation: moveclouds2 28s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear; }
   .summer .bg_deco.deco6 {
     left: 630px;
     opacity: 0.3;
-    animation: moveclouds2 13s linear infinite, sideWays 4s ease-in-out infinite alternate, drift 3000ms infinite linear; }
+    animation: moveclouds2 13s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear; }
   .summer .bg_deco.deco7 {
     left: 850px;
     opacity: 0.7;
-    animation: moveclouds2 20s linear infinite, sideWays 3s ease-in-out infinite alternate, drift 3000ms infinite linear;
+    animation: moveclouds2 20s linear infinite, sideWays2 3s ease-in-out infinite alternate, drift 3000ms infinite linear;
     width: 70px;
     height: 70px; }
   .summer .bg_deco.deco8 {
     left: 80px;
     opacity: 0.5;
-    animation: moveclouds2 15s linear infinite, sideWays 6s ease-in-out infinite alternate, drift 3000ms infinite linear; }
+    animation: moveclouds2 15s linear infinite, sideWays2 6s ease-in-out infinite alternate, drift 3000ms infinite linear; }
   .summer .bg_deco.deco9 {
     left: 1540px;
     opacity: 0.8;
-    animation: moveclouds2 17s linear infinite, sideWays 4s ease-in-out infinite alternate, drift 3000ms infinite linear; }
+    animation: moveclouds2 17s linear infinite, sideWays2 4s ease-in-out infinite alternate, drift 3000ms infinite linear; }
   .summer .bg_deco.deco10 {
     left: 1000px;
     opacity: 0.9;
-    animation: moveclouds2 23s linear infinite, sideWays 2s ease-in-out infinite alternate, drift 3000ms infinite linear;
+    animation: moveclouds2 23s linear infinite, sideWays2 2s ease-in-out infinite alternate, drift 3000ms infinite linear;
     width: 80px;
     height: 80px; }
 

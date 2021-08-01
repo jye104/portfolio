@@ -127,7 +127,7 @@ $(document).ready(function () {
       const key = e.keyCode;
       const $tg = $(e.target);
       console.log(key, $tg);
-      if ((key === 37)) { // ← 방향키
+      if ((key === 37)) {
         if ($ipodList.parent('.on').children().is('.first')) {
           $first.parent().removeClass('on');
           $end.parent().addClass('on');
@@ -135,7 +135,7 @@ $(document).ready(function () {
           $ipodList.parent('.on').removeClass('on').prev().addClass('on');
         }
       }
-      if ((key === 39)) { // → 방향키
+      if ((key === 39)) {
         if ($ipodList.parent('.on').children().is('.end')) {
           $end.parent().removeClass('on');
           $first.parent().addClass('on');
@@ -421,7 +421,6 @@ $(document).ready(function () {
   if ($(this).is('.spring')){
     $pageLi.eq(tgNum).addClass('on').siblings().removeClass('on');
     $cntWrap.css({width: cntTotal * winWid}).attr({'aria-live': 'polite'});
-    
     $pageLi.children().on('click', function(){
       if($cntWrap.is(':animated')) return false;
       tgNum = $(this).parent().index();
@@ -456,7 +455,7 @@ $(document).ready(function () {
       });        
 
   } else {
-    $cntWrap.removeAttr('style').removeAttr({'aria-live'});
+    $cntWrap.removeAttr('style').attr({'aria-live': 'off'});
     }
     function springA11y() {
       // 현재 본문
