@@ -286,15 +286,15 @@
           }
         }
       }
-      img{width: 900px; height: 591px;}
-      .wrap_open_btn{
-        position: absolute; top: 130px; right: 90px; width: 900px; height: 591px;
+      .right_ww{
+        position: relative;
+        img{width: 1000px; height: 613px;}
         .md_open_btn{
           @include transition(all 0.5s);
-          position: absolute; font-size: 30px; border-radius: 50%; background: #ffe2e2; width: 40px; height: 40px; line-height: 40px; box-shadow: 1px 1px 8px #d6111179; z-index: 2;
+          position: absolute; font-size: 30px; border-radius: 50%; background: #ffe2e2; width: 50px; height: 50px; line-height: 50px; box-shadow: 1px 1px 8px rgba(214, 17, 17, 0.8); z-index: 2;
           &::before, &::after{
             @include transition(all 0.5s);
-            content: ""; position: absolute; top: 0; left: 0; width: 40px; height: 40px; background: #ffe2e2; border-radius: 50%; animation: circle 3s infinite forwards; z-index: -1;}
+            content: ""; position: absolute; top: 0; left: 0; width: 50px; height: 50px; background: #ffe2e2; border-radius: 50%; animation: circle 3s infinite forwards; z-index: -1;}
           &::after{animation-delay: 0.6s;}
           &:hover, &:focus{
             @include transform(rotate(360deg));
@@ -302,17 +302,16 @@
             &::before, &::after{width: 45px; height: 45px;};
           }
         }
-        :nth-child(1){left: 18%;}
-        :nth-child(2){top: 42%; right: 5%;}
-        :nth-child(3){top: 38%; left: 0;}
-        :nth-child(4){top: 50%; right: 53%;}
+        :nth-child(2){top: 2%; right: 10%;}
+        :nth-child(3){top: 45%; right: 8%;}
+        :nth-child(4){top: 40%; left: 0;}
+        :nth-child(5){top: 52%; left: 28%;}
       }
     }
   }
 
 
 #cnt3{
-  padding-top: 20px;
   .cnt3_wrap{
     @include flex;
     @include justify-content;
@@ -335,7 +334,7 @@
     padding-right: 20px;
     button{padding-right: 10px;}
     img{width: 30px; filter: grayscale(100%);}
-    button:hover img, button:focus img{filter: none;}
+    button:hover img, button:focus img, li.on img{filter: none;}
   }
   .about_tit{
     @include flex;
@@ -348,40 +347,14 @@
     @include justify-content(flex-start);
     @include align-items;
     height: 100vh; padding: 50px 70px 0 50px; 
-    h3, img, p, span{
-      @include transition(all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94));
-      opacity: 0;
-    }
-    h3, img{
-      @include transform(translate(0, 200px));
-    }
-    h3{
-      @include transition-delay(0.1s);
-    }
-    img{
-      @include transition-delay(0.5s);
-    }
-    span{
-      @include transition-delay(0.8s);
-    }
-    p{
-      @include transition-delay(1.2s);
-      @include transform(translate(0, 200px));
-      line-height: 1.8; font-weight: 300;
-    }
-    &.pllx{
-      h3, img, p, span{
-        @include transform(translate(0, 0));
-        opacity: 1;
-      }
-    }
+
     &.contact{
       @include justify-content(center);
       > img{border-radius: 50%;}
       .contact_txt{
         h3{font-size: 80px; padding-bottom: 30px;}
         p{font-size: 25px; padding-bottom: 20px;}  
-        img{width: 60px; padding-right: 20px;}
+        img{width: 60px; padding-right: 20px; display: inline-block;}
         .stress{font-size: 30px; animation: stress 1.2s 3s ease alternate infinite; text-align: center; padding-top: 20px; font-weight: 400;}
       }
     }
@@ -391,7 +364,7 @@
       width: 700px; height: 700px; perspective: 700px;
     }
     .info_txt{
-       padding-left: 20px;
+       padding-left: 20px; position: relative; z-index: 5;
       .hello{
         font-size: 100px; font-weight: 900 !important; margin-left: -95px; line-height: 1.2 !important; color: #e6e6e6;
         span{display: inline-block; -webkit-text-stroke: 4px #fff; -webkit-text-fill-color: transparent;}
@@ -468,7 +441,7 @@
     }
     .hover{display: none;}
     .controller{
-      display: block;
+      display: block; position: absolute; z-index: 50; width: 100%; top: 0;
       #prev, #next{
         position: absolute; top:450px; width: 80px; height: 70px; background: rgba(255, 34, 34, 0.3); color: #fff; transform: translateY(-50%); border-radius: 30px; 
       }
