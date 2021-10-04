@@ -413,6 +413,7 @@ $(window).on('scroll', function () {
     } else if ($(this).is('.spring')) {
       $(this).parent().addClass('on').siblings().removeClass('on');
       $('#cnt3').addClass('spring').removeClass('summer fall winter');
+
     } else if ($(this).is('.summer')) {
       $(this).parent().addClass('on').siblings().removeClass('on');
       $('#cnt3').addClass('summer').removeClass('spring fall winter');
@@ -437,10 +438,13 @@ $(window).on('scroll', function () {
     let timerResize = 0;
     let timerScroll = 0;
     let timerWheel = 0;
+    $('html, body').stop().animate({scrollTop: $('#container_wrap').offset().top}, 800, 'easeOutBack');
+    $('#container_wrap').find('.on').removeClass('on');
+    $('#container_wrap').find('.info').addClass('on');
+
     if ($(this).is('.normal')){
       $cntWrap.removeAttr('style aria-live');
       $cntWrap.children().removeAttr('aria-hidden inert').addClass('fade');
-
     }
     if ($(this).hasClass('spring')){
       if($(this).parent().hasClass('on')){
